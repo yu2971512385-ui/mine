@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yu2971512385-ui.github.io/mine/sitemap.xml

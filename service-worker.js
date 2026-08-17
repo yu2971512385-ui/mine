@@ -1,7 +1,11 @@
-const CACHE_NAME = 'andy-growth-v1'
+const CACHE_NAME = 'andy-growth-v4'
 const APP_SHELL = [
   './',
   './index.html',
+  './team.html',
+  './team.css',
+  './team-data.js',
+  './team.js',
   './styles.css',
   './script.js',
   './site.webmanifest',
@@ -33,25 +37,28 @@ self.addEventListener('fetch', (event) => {
   if (requestUrl.origin !== self.location.origin) return
 
   if (event.request.mode === 'navigate') {
+    const fallback = requestUrl.pathname.endsWith('/team.html') ? './team.html' : './index.html'
     event.respondWith(
       fetch(event.request)
         .then((response) => {
           const copy = response.clone()
-          caches.open(CACHE_NAME).then((cache) => cache.put('./index.html', copy))
+          caches.open(CACHE_NAME).then((cache) => cache.put(fallback, copy))
           return response
         })
-        .catch(() => caches.match('./index.html')),
+        .catch(() => caches.match(fallback)),
     )
     return
   }
 
   event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
-      if (response.ok) {
-        const copy = response.clone()
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy))
-      }
-      return response
-    })),
+    fetch(event.request)
+      .then((response) => {
+        if (response.ok) {
+          const copy = response.clone()
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy))
+        }
+        return response
+      })
+      .catch(() => caches.match(event.request, { ignoreSearch: true })),
   )
 })

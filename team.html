@@ -16,8 +16,9 @@
     <link rel="manifest" href="./site.webmanifest" />
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png" />
     <link rel="apple-touch-icon" href="./assets/icon-192.png" />
-    <link rel="stylesheet" href="./styles.css?v=20260817" />
-    <link rel="stylesheet" href="./team.css?v=20260817" />
+    <link rel="stylesheet" href="./styles.css?v=20260817-2" />
+    <link rel="stylesheet" href="./team.css?v=20260817-2" />
+    <link rel="stylesheet" href="./auth.css?v=20260817-2" />
     <title>UA Team | 海外增长优化团队</title>
   </head>
   <body class="team-page" id="top">
@@ -32,7 +33,7 @@
         <a href="./index.html#work">操盘</a>
         <a href="./index.html#growth-os">Growth OS</a>
         <a class="is-current" href="#roster" aria-current="page">UA Team</a>
-        <a class="nav__cta" href="./index.html#contact">开始对话</a>
+        <button class="nav__auth" type="button" data-auth-open data-auth-account>账号登录</button>
       </nav>
     </header>
 
@@ -101,6 +102,18 @@
             </div>
 
             <blockquote id="profile-view"></blockquote>
+
+            <section class="profile-contact" id="profile-contact">
+              <div>
+                <p>DIRECT CONTACT</p>
+                <h4 id="profile-contact-title">联系这位 UA</h4>
+                <span id="profile-contact-copy">登录后可查看对应邮箱。</span>
+              </div>
+              <div class="profile-contact__action">
+                <button type="button" id="profile-contact-login" data-auth-open>登录后查看邮箱</button>
+                <a id="profile-contact-email" href="#" hidden></a>
+              </div>
+            </section>
           </article>
         </div>
         <p class="roster__note">当前为资料模板。请只录入可核验的真实姓名、照片、经历与市场经验；占位资料不会暗示具体人员业绩。</p>
@@ -125,7 +138,7 @@
           <p class="eyebrow">MATCH THE PROBLEM</p>
           <h2 id="team-contact-title">先说问题。<br /><span>再决定谁来接。</span></h2>
           <p>提供产品、目标市场、当前预算和最主要的增长瓶颈。</p>
-          <a href="./index.html#contact">发起增长对话 <span>›</span></a>
+          <a href="#roster">选择对应优化师 <span>›</span></a>
         </div>
       </section>
     </main>
@@ -137,7 +150,10 @@
     </footer>
 
     <a class="back-top" href="#top" aria-label="返回顶部">↑</a>
-    <script src="./team-data.js?v=20260817"></script>
-    <script src="./team.js?v=20260817"></script>
+    <script src="./vendor/supabase.min.js?v=2.112.3"></script>
+    <script src="./auth-config.js?v=20260817-2"></script>
+    <script src="./auth.js?v=20260817-2"></script>
+    <script src="./team-data.js?v=20260817-2"></script>
+    <script src="./team.js?v=20260817-2"></script>
   </body>
 </html>

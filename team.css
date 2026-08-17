@@ -55,6 +55,14 @@
 .profile-sections li span { color: var(--blue-dark); font-size: .6rem; font-weight: 650; }
 .profile-sections li strong { font-weight: 520; }
 .profile-detail blockquote { margin: 36px 0 0; padding: 30px 0 0; color: #6e6e73; border-top: 1px solid var(--line); font-size: 1.3rem; font-weight: 540; line-height: 1.45; }
+.profile-contact { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; margin-top: 38px; padding: 30px 0 0; border-top: 1px solid var(--line); }
+.profile-contact p { color: var(--blue-dark); font-size: .6rem; font-weight: 650; }
+.profile-contact h4 { margin: 8px 0 0; font-size: 1.2rem; font-weight: 620; }
+.profile-contact span { display: block; margin-top: 8px; color: var(--muted); font-size: .7rem; }
+.profile-contact__action button, .profile-contact__action a { display: inline-flex; align-items: center; justify-content: center; min-width: 170px; min-height: 44px; padding: 10px 16px; color: #fff; background: var(--blue-dark); border: 0; border-radius: 7px; font-size: .75rem; font-weight: 620; }
+.profile-contact__action button[data-state="setup"] { color: #6e6e73; background: #e5e5e7; }
+.profile-contact__action button:disabled { cursor: wait; opacity: .62; }
+.profile-contact__action a { overflow-wrap: anywhere; }
 .roster__note { margin-top: 18px; color: #aaa; font-size: .64rem; text-align: right; }
 
 .team-standard { padding: 160px max(24px, calc((100vw - var(--content)) / 2)); color: #fff; background: #000; }
@@ -113,6 +121,8 @@
   .profile-sections section { grid-template-columns: 1fr; gap: 10px; padding: 28px 0; }
   .profile-sections ol { margin-top: 8px; }
   .profile-detail blockquote { font-size: 1.12rem; }
+  .profile-contact { grid-template-columns: 1fr; }
+  .profile-contact__action button, .profile-contact__action a { width: 100%; }
   .roster__note { text-align: left; }
   .team-standard__list { margin-top: 70px; }
   .team-standard__list li { grid-template-columns: 42px 1fr; gap: 12px; padding: 28px 0; }

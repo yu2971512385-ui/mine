@@ -1,4 +1,4 @@
-const CACHE_NAME = 'andy-growth-v4'
+const CACHE_NAME = 'andy-growth-v5'
 const APP_SHELL = [
   './',
   './index.html',
@@ -6,6 +6,10 @@ const APP_SHELL = [
   './team.css',
   './team-data.js',
   './team.js',
+  './auth.css',
+  './auth-config.js',
+  './auth.js',
+  './vendor/supabase.min.js',
   './styles.css',
   './script.js',
   './site.webmanifest',

@@ -4,10 +4,9 @@
 
 ## 上线前必须替换
 
-1. `index.html` 中的 `Andy`、邮箱 `your-email@example.com` 和个人描述。
-2. 联系邮箱目前仍是占位内容，发布前请替换为你的真实邮箱。
-3. 有真实项目资料后，补充产品名称、市场、目标、动作、周期与可公开结果。
-4. 用户提供个人照片后，可在首屏加入真实人物形象。
+1. `index.html` 中的 `Andy` 和个人描述。
+2. 有真实项目资料后，补充产品名称、市场、目标、动作、周期与可公开结果。
+3. 用户提供个人照片后，可在首屏加入真实人物形象。
 
 ## 维护 UA Team
 
@@ -20,6 +19,26 @@ photo: './assets/team/optimizer-01.jpg',
 ```
 
 未填写照片时，页面会显示 `PHOTO / 待上传` 占位。公开前请将“待填写”内容替换为可核验的真实资料。
+
+## 启用账号登录与受保护邮箱
+
+网站使用 Supabase Auth 和 Row Level Security。公开页面只保存优化师资料 ID，真实邮箱放在受 RLS 保护的数据库表中；未登录访问无法读取。
+
+1. 在 Supabase 创建免费项目。
+2. 在 SQL Editor 执行 `supabase-schema.sql`。
+3. 在 Project Settings → API 复制 Project URL 和 Publishable key，填入 `auth-config.js`：
+
+```js
+window.AUTH_CONFIG = {
+  supabaseUrl: 'https://你的项目.supabase.co',
+  supabasePublishableKey: '你的 Publishable key',
+}
+```
+
+4. 在 Authentication → URL Configuration 中，把 Site URL 设为 `https://yu2971512385-ui.github.io/mine/`，并将 `https://yu2971512385-ui.github.io/mine/**` 加入 Redirect URLs。
+5. 在 Supabase Table Editor 的 `ua_contacts` 表录入邮箱。`optimizer_id` 必须与 `team-data.js` 一致：`paid-social`、`search-growth`、`app-growth` 或 `creative-growth`。
+
+`Publishable key` 可以放在浏览器端；绝对不要把 `service_role` key 写入本仓库或网页。后者能够绕过 RLS。
 
 ## 视觉素材
 

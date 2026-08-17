@@ -24,7 +24,7 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
-nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav))
+nav.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', closeNav))
 
 window.addEventListener('scroll', () => {
   backTop.classList.toggle('visible', window.scrollY > 900)
@@ -45,6 +45,65 @@ document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe
 const profiles = window.UA_TEAM_PROFILES || []
 const profileList = document.getElementById('profile-list')
 const detail = document.getElementById('profile-detail')
+let activeProfile = null
+let contactRequestId = 0
+
+const renderProfileContact = async () => {
+  if (!activeProfile) return
+
+  const requestId = ++contactRequestId
+  const auth = window.siteAuth
+  const button = document.getElementById('profile-contact-login')
+  const emailLink = document.getElementById('profile-contact-email')
+  const copy = document.getElementById('profile-contact-copy')
+  const title = document.getElementById('profile-contact-title')
+
+  title.textContent = `联系 ${activeProfile.name}`
+  emailLink.hidden = true
+  emailLink.removeAttribute('href')
+  button.hidden = false
+  button.disabled = false
+  button.removeAttribute('data-state')
+
+  if (!auth?.isConfigured) {
+    copy.textContent = '身份服务尚未连接，邮箱保持隐藏。'
+    button.textContent = '联系功能待启用'
+    button.dataset.state = 'setup'
+    return
+  }
+
+  if (!auth.user) {
+    copy.textContent = '公开资料可浏览；登录后才能查看对应邮箱。'
+    button.textContent = '登录后查看邮箱'
+    return
+  }
+
+  copy.textContent = '正在验证账号权限并读取联系方式。'
+  button.textContent = '正在读取…'
+  button.disabled = true
+  const { data, error } = await auth.getUaContact(activeProfile.id)
+  if (requestId !== contactRequestId) return
+
+  if (error) {
+    copy.textContent = '联系方式读取失败，请重新登录后再试。'
+    button.textContent = '查看我的账号'
+    button.disabled = false
+    return
+  }
+
+  if (!data?.email) {
+    copy.textContent = '这位优化师暂未录入公开联系邮箱。'
+    button.textContent = '查看其他优化师'
+    button.disabled = true
+    return
+  }
+
+  copy.textContent = '账号权限已验证，可直接发起邮件。'
+  button.hidden = true
+  emailLink.hidden = false
+  emailLink.href = `mailto:${data.email}?subject=${encodeURIComponent(`海外投放合作咨询 / ${activeProfile.role}`)}`
+  emailLink.textContent = data.email
+}
 
 const setList = (id, values) => {
   const list = document.getElementById(id)
@@ -65,6 +124,7 @@ const setText = (id, value) => {
 
 const renderProfile = (profile, activeButton) => {
   if (!profile) return
+  activeProfile = profile
 
   profileList.querySelectorAll('[role="tab"]').forEach((button) => {
     const active = button === activeButton
@@ -106,6 +166,7 @@ const renderProfile = (profile, activeButton) => {
 
     detail.setAttribute('aria-labelledby', activeButton.id)
     detail.classList.remove('is-changing')
+    renderProfileContact()
   }, 100)
 }
 
@@ -151,6 +212,7 @@ profiles.forEach((profile, index) => {
 
 document.getElementById('profile-count').textContent = String(profiles.length).padStart(2, '0')
 renderProfile(profiles[0], profileList.querySelector('button'))
+window.addEventListener('site-auth-change', renderProfileContact)
 
 const supportsServiceWorker = location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)
 

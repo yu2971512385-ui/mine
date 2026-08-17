@@ -24,7 +24,7 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
-nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav))
+nav.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', closeNav))
 
 window.addEventListener('scroll', () => {
   backTop.classList.toggle('visible', window.scrollY > 900)
@@ -171,39 +171,164 @@ const stageNames = { zero: 'ZERO', scale: 'SCALE', recovery: 'RECOVERY' }
 const bottleneckNames = { cac: 'CAC', creative: 'CREATIVE', data: 'DATA', scale: 'DELIVERY' }
 
 const modelContext = {
-  app: { metric: '预测 90D LTV / CAC', signal: 'Trial、Subscribe、Renewal', cohort: '国家和订阅周期' },
-  ecom: { metric: '新客贡献利润 / CAC', signal: '订单毛利、新客与复购价值', cohort: '商品、市场和新老客' },
-  saas: { metric: 'Pipeline Value / CAC', signal: 'MQL、SQL、激活与成交', cohort: '意图、行业和销售阶段' },
+  app: {
+    label: '订阅 App',
+    signal: 'Trial、Subscribe、Renewal',
+    cohort: '国家、版本和订阅周期',
+    metrics: {
+      cac: '预测 90D LTV / CAC',
+      creative: '付费用户 CAC / 素材母题',
+      data: 'MMP 收入与后台收入偏差',
+      scale: '深层事件密度 / 市场容量',
+    },
+  },
+  ecom: {
+    label: 'DTC 电商',
+    signal: '订单毛利、新客身份、退款与复购价值',
+    cohort: '商品、市场和新老客',
+    metrics: {
+      cac: '新客贡献利润 / CAC',
+      creative: '新客收入 / 素材母题',
+      data: '净收入与平台收入偏差',
+      scale: '边际 MER / 可售库存',
+    },
+  },
+  saas: {
+    label: 'AI / SaaS',
+    signal: 'MQL、SQL、激活、Pipeline 与成交',
+    cohort: '意图、行业和销售阶段',
+    metrics: {
+      cac: 'Pipeline Value / CAC',
+      creative: '合格 Pipeline / 信息角度',
+      data: 'CRM 成交与平台转化偏差',
+      scale: 'SQL 密度 / 可服务市场',
+    },
+  },
 }
 
 const bottleneckDiagnosis = {
-  cac: { title: '问题大概率不在流量价格，而在优化信号仍停留在浅层事件。', detail: '当账户用低门槛事件驱动预算扩量，算法会放大“便宜但低价值”的用户。先把真实商业价值送回系统，再讨论放量。', action: '冻结低价值扩量，按商业质量重排预算' },
-  creative: { title: '素材衰退不是产量问题，而是用户洞察没有形成可重复的变量。', detail: '持续换画面无法延长增长周期。需要把人群、痛点、承诺、证据、钩子和形式拆开，才能知道爆款为何成立。', action: '保留有效母题，停止无假设的素材消耗' },
-  data: { title: '归因失真时继续优化，只是在用更快速度放大错误。', detail: '浏览器、服务端、分析工具与业务后台承担不同角色。先统一结算、归因和优化口径，再恢复自动化决策。', action: '暂停激进迁移，先完成事件去重与价值校准' },
-  scale: { title: '预算花不出通常不是受众太窄，而是系统没有足够可信的转化自由度。', detail: '出价约束、信号密度、素材覆盖和市场容量共同限制交付。放宽定向只是最后一步，不是第一反应。', action: '按信号、素材、市场、出价顺序解除限速' },
+  cac: {
+    label: '获客成本',
+    titles: {
+      app: 'CPI 下降不等于增长。先确认买来的用户会不会付费和续费。',
+      ecom: '订单 ROAS 还能看，但新客贡献利润正在被折扣、退款和物流吃掉。',
+      saas: '表单成本不是 CAC。销售不接、不能成交的线索，本质上没有价值。',
+    },
+    details: {
+      app: '如果系统仍以安装或浅层试用学习，它会持续购买最容易转化、却最不可能长期付费的人。',
+      ecom: '如果平台只看订单金额，它会偏向复购客、低毛利 SKU 和折扣订单，让表面回报掩盖真实亏损。',
+      saas: '如果优化目标停在 Lead，算法会放大便宜表单，而不是更接近 SQL、Pipeline 和成交的需求。',
+    },
+    experiments: {
+      app: '隔离安装优化与付费价值优化，对比国家 Cohort 的付费率和续费率',
+      ecom: '按新客、SKU 毛利与退款率重算广告组贡献利润',
+      saas: '把 Lead、MQL、SQL 与成交拆开回传，重排意图词和受众',
+    },
+  },
+  creative: {
+    label: '素材衰退',
+    titles: {
+      app: '不是视频拍少了，而是用户为什么安装、为什么付费还没有被拆清楚。',
+      ecom: '爆款衰退不可怕。可怕的是团队只复制画面，没有复制购买理由。',
+      saas: 'SaaS 素材失效，通常不是设计问题，而是价值承诺没有对准决策角色。',
+    },
+    details: {
+      app: '把功能展示、使用场景、即时收益和订阅证据混在一条素材里，团队就无法知道哪一个变量真正推动高价值用户。',
+      ecom: '同一商品需要拆开痛点、使用场景、差异化证据、价格锚点和社会证明，才能持续生成下一代素材。',
+      saas: '使用者、部门负责人和采购者关心的风险不同。单一卖点无法同时推动点击、激活和进入销售流程。',
+    },
+    experiments: {
+      app: '建立场景 × 核心收益 × 付费证据矩阵，并按订阅质量判定素材',
+      ecom: '建立人群 × 痛点 × 承诺 × 证据矩阵，保留胜出母题而非单条视频',
+      saas: '按使用者、负责人、采购者分别测试价值承诺与可信证据',
+    },
+  },
+  data: {
+    label: '归因失真',
+    titles: {
+      app: 'SKAN、MMP 与订阅后台给出三个答案时，任何自动扩量都没有可靠地基。',
+      ecom: '平台收入不等于净收入。重复事件、退款和新老客混算会直接误导预算。',
+      saas: '广告平台看见了表单，CRM 看见了成交；两者没连上，智能出价就会学错。',
+    },
+    details: {
+      app: '安装、试用、订阅和续费需要明确事件所有者、去重方式与收入口径，并按可观测窗口解释差异。',
+      ecom: 'Pixel、CAPI、支付系统和订单后台需要使用一致的 event_id、币种与净收入定义。',
+      saas: '线索创建、销售接受、Pipeline 和 Closed Won 必须拥有稳定 ID，才能把离线价值送回渠道。',
+    },
+    experiments: {
+      app: '抽样核对设备事件、MMP 收入和订阅后台，并记录各窗口偏差',
+      ecom: '逐单核对 Pixel/CAPI 去重、退款和新客标记，建立净收入对账',
+      saas: '用 Lead ID 串联广告点击、CRM 阶段和成交金额，验证离线回传',
+    },
+  },
+  scale: {
+    label: '预算花不出',
+    titles: {
+      app: '预算花不出，不一定是受众小；也可能是高价值事件太少，系统不敢交付。',
+      ecom: '电商扩量受限往往同时来自库存、素材覆盖、出价边界和市场容量。',
+      saas: '高客单 SaaS 不能靠放宽受众硬扩量，必须先增加合格信号和需求入口。',
+    },
+    details: {
+      app: '深层事件密度、国家容量、素材覆盖和出价约束共同决定系统能否越过学习期。',
+      ecom: 'Hero SKU 可售天数、Feed 完整度、新客价值与创意覆盖任何一项不足，都会限制新增预算。',
+      saas: '搜索需求、可触达决策角色、销售承接和回传速度共同形成交付上限。',
+    },
+    experiments: {
+      app: '按信号密度、国家容量、素材覆盖和出价约束的顺序解除限速',
+      ecom: '按 SKU 库存、市场、素材覆盖和边际 MER 建立扩量候选池',
+      saas: '扩展高意图主题与决策角色，同时守住 SQL 和 Pipeline 质量',
+    },
+  },
 }
 
-const stageModifier = {
-  zero: '当前处于冷启动阶段，优先建立最小可验证闭环，避免过早追求规模。',
-  scale: '当前处于规模阶段，所有动作必须通过边际效率和回收周期审查。',
-  recovery: '当前处于修复阶段，先停止结构性亏损，再逐步恢复学习与预算。',
+const stageContext = {
+  zero: {
+    label: '从 0 到 1',
+    heading: '从 0 到 1：',
+    detail: '当前不是追求规模，而是用最少预算确认产品、信号、市场和素材能否形成闭环。',
+    budget: '只保留验证预算；达到信号密度和质量门槛后逐阶增加',
+    step: '建立一个市场、一类核心用户和一个深层转化的最小验证结构',
+    exit: '连续两个观察窗口达到质量门槛后，再开放下一档预算',
+  },
+  scale: {
+    label: '规模扩量',
+    heading: '规模扩量：',
+    detail: '当前重点是辨认下一美元的边际回报，不能用历史平均值替新增预算背书。',
+    budget: '将新增预算移向边际质量稳定的市场、素材和用户 Cohort',
+    step: '把存量结果拆成基准盘与增量盘，单独观察新增预算的边际效率',
+    exit: '边际效率和回收周期守住目标后，再迁移并放大预算',
+  },
+  recovery: {
+    label: '效率修复',
+    heading: '效率修复：',
+    detail: '当前先停止结构性亏损，保护仍然有效的信号，再逐步恢复学习。',
+    budget: '冻结亏损扩量；预算只留给可解释、可对账的有效单元',
+    step: '按损失规模排序账户、市场和素材，先关闭无法解释的预算泄漏',
+    exit: '核心指标回到修复线并稳定两个周期后，再小步恢复预算',
+  },
 }
 
 const renderDiagnosis = () => {
   const model = modelContext[state.model]
+  const stage = stageContext[state.stage]
   const diagnosis = bottleneckDiagnosis[state.bottleneck]
   document.getElementById('diagnosis-code').textContent = `${modelNames[state.model]}-${stageNames[state.stage]}-${bottleneckNames[state.bottleneck]}`
-  document.getElementById('diagnosis-title').textContent = diagnosis.title
-  document.getElementById('diagnosis-detail').textContent = `${diagnosis.detail}${stageModifier[state.stage]}`
-  document.getElementById('control-metric').textContent = model.metric
-  document.getElementById('budget-action').textContent = diagnosis.action
+  document.getElementById('diagnosis-selection').textContent = `${model.label} / ${stage.label} / ${diagnosis.label}`
+  document.getElementById('diagnosis-title').textContent = `${stage.heading}${diagnosis.titles[state.model]}`
+  document.getElementById('diagnosis-detail').textContent = `${diagnosis.details[state.model]} ${stage.detail}`
+  document.getElementById('control-metric').textContent = model.metrics[state.bottleneck]
+  document.getElementById('budget-action').textContent = stage.budget
   const sequences = [
-    `校准 ${model.signal} 的价值、去重和回传`,
-    `按${model.cohort}建立真实质量 Cohort`,
-    state.bottleneck === 'creative' ? '建立母题、变量和衰退监测的素材实验矩阵' : '隔离浅层信号与高价值优化结构',
-    state.stage === 'zero' ? '完成最小闭环后再逐阶增加预算' : state.stage === 'recovery' ? '达到修复门槛后分阶段恢复预算' : '确认边际效率后迁移并放大预算',
+    `校准${model.signal}的价值、去重和回传`,
+    `${stage.step}，并按${model.cohort}建立质量 Cohort`,
+    diagnosis.experiments[state.model],
+    stage.exit,
   ]
   document.getElementById('decision-sequence').innerHTML = sequences.map((item, index) => `<li><span>0${index + 1}</span>${item}</li>`).join('')
+
+  const output = document.querySelector('.os-output')
+  output.classList.remove('is-refreshed')
+  requestAnimationFrame(() => output.classList.add('is-refreshed'))
 }
 
 document.querySelectorAll('[data-control]').forEach((group) => {
@@ -221,6 +346,8 @@ document.querySelectorAll('[data-control]').forEach((group) => {
     })
   })
 })
+
+renderDiagnosis()
 
 const supportsServiceWorker = location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)
 

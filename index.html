@@ -17,7 +17,8 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png" />
     <link rel="apple-touch-icon" href="./assets/icon-192.png" />
     <link rel="preload" href="./assets/global-city-lights.jpg" as="image" />
-    <link rel="stylesheet" href="./styles.css?v=20260817" />
+    <link rel="stylesheet" href="./styles.css?v=20260817-2" />
+    <link rel="stylesheet" href="./auth.css?v=20260817-2" />
     <title>Andy | 海外增长投放专家</title>
     <script type="application/ld+json">
       {
@@ -42,7 +43,7 @@
         <a href="#work">操盘</a>
         <a href="#growth-os">Growth OS</a>
         <a href="./team.html">UA Team</a>
-        <a class="nav__cta" href="#contact">开始对话</a>
+        <button class="nav__auth" type="button" data-auth-open data-auth-account>账号登录</button>
       </nav>
     </header>
 
@@ -287,10 +288,11 @@
           </div>
           <div class="os-output" aria-live="polite">
             <p class="os-output__code">DIAGNOSIS <span id="diagnosis-code">APP-SCALE-CAC</span></p>
-            <h3 id="diagnosis-title">问题大概率不在流量价格，而在优化信号仍停留在浅层事件。</h3>
-            <p id="diagnosis-detail">当账户用安装或试用驱动大预算扩量，算法会放大“便宜但低价值”的用户。先把订阅价值和续费质量送回系统，再讨论放量。</p>
-            <div class="os-output__facts"><div><span>首要指标</span><strong id="control-metric">预测 90D LTV / CAC</strong></div><div><span>预算动作</span><strong id="budget-action">冻结低价值扩量，按付费质量重排预算</strong></div></div>
-            <ol id="decision-sequence"><li><span>01</span>校准 Trial、Subscribe、Renewal 价值与去重</li><li><span>02</span>按国家和订阅周期建立质量 Cohort</li><li><span>03</span>隔离浅层转化与高价值优化广告组</li><li><span>04</span>确认边际 LTV/CAC 后分阶段恢复预算</li></ol>
+            <p class="os-output__selection" id="diagnosis-selection">订阅 App / 规模扩量 / 获客成本</p>
+            <h3 id="diagnosis-title">规模扩量：CPI 下降不等于增长。先确认买来的用户会不会付费和续费。</h3>
+            <p id="diagnosis-detail">如果系统仍以安装或浅层试用学习，它会持续购买最容易转化、却最不可能长期付费的人。当前重点是辨认下一美元的边际回报，不能用历史平均值替新增预算背书。</p>
+            <div class="os-output__facts"><div><span>首要指标</span><strong id="control-metric">预测 90D LTV / CAC</strong></div><div><span>预算动作</span><strong id="budget-action">将新增预算移向边际质量稳定的市场、素材和用户 Cohort</strong></div></div>
+            <ol id="decision-sequence"><li><span>01</span>校准 Trial、Subscribe、Renewal 的价值、去重和回传</li><li><span>02</span>把存量结果拆成基准盘与增量盘，并按国家、版本和订阅周期建立质量 Cohort</li><li><span>03</span>隔离安装优化与付费价值优化，对比国家 Cohort 的付费率和续费率</li><li><span>04</span>边际效率和回收周期守住目标后，再迁移并放大预算</li></ol>
           </div>
         </div>
       </section>
@@ -314,8 +316,8 @@
           <p class="eyebrow">YOUR NEXT GROWTH MOVE</p>
           <h2 id="contact-title">下一个市场。<br /><span>从正确的问题开始。</span></h2>
           <p>只需要产品、目标市场、当前预算和最大增长瓶颈。</p>
-          <a class="contact__action" href="mailto:your-email@example.com?subject=Global Growth Brief&amp;body=产品与商业模式：%0A目标市场：%0A当前月预算：%0A最主要的增长瓶颈：">发起增长对话 <span>↗</span></a>
-          <small>联系邮箱待你提供后替换</small>
+          <a class="contact__action" href="./team.html#roster">选择 UA 优化师 <span>›</span></a>
+          <small>公开资料可直接浏览；登录后查看对应优化师邮箱</small>
         </div>
       </section>
     </main>
@@ -327,6 +329,9 @@
     </footer>
 
     <a class="back-top" href="#top" aria-label="返回顶部">↑</a>
-    <script src="./script.js?v=20260817"></script>
+    <script src="./vendor/supabase.min.js?v=2.112.3"></script>
+    <script src="./auth-config.js?v=20260817-2"></script>
+    <script src="./auth.js?v=20260817-2"></script>
+    <script src="./script.js?v=20260817-2"></script>
   </body>
 </html>

@@ -9,6 +9,18 @@
 3. 有真实项目资料后，补充产品名称、市场、目标、动作、周期与可公开结果。
 4. 用户提供个人照片后，可在首屏加入真实人物形象。
 
+## 维护 UA Team
+
+团队资料集中在 `team-data.js`。新增优化师时，复制其中一整个资料对象并修改 `id`、`code`、姓名、角色和经历，页面会自动增加一个可切换的入口。
+
+照片放入 `assets/team/`，再把对应资料的 `photo` 改为相对路径，例如：
+
+```js
+photo: './assets/team/optimizer-01.jpg',
+```
+
+未填写照片时，页面会显示 `PHOTO / 待上传` 占位。公开前请将“待填写”内容替换为可核验的真实资料。
+
 ## 视觉素材
 
 `assets/global-city-lights.jpg` 来自 NASA/JPL/GSFC 的 Global City Lights，来源页：

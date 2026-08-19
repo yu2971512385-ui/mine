@@ -74,6 +74,15 @@ const audiences = {
     finalTitle: 'Your first campaign should not have to wait for a marketing hire.',
     finalCopy: 'Bring your website and the offer you want to promote. Leave with a campaign you can understand, control and choose to launch.',
     heroNote: 'Start with one goal. Keep control as your campaigns and business grow.',
+    requestOffer: {
+      type: 'guided_demo',
+      kicker: 'Personalized walkthrough',
+      title: 'See Hellyeah build around your real business, not a sample account.',
+      copy: 'Bring your website and one growth goal. We will focus the walkthrough on the campaign decisions an owner needs to understand and control.',
+      cta: 'Request a guided demo',
+      deliverables: ['Your website as the brief', 'A Meta or Google starting recommendation', 'Budget review and launch control'],
+      note: 'Best for owners who want a guided first look before building independently.',
+    },
     recognitionKicker: 'When marketing keeps falling back to you',
     recognitionTitle: 'You know the business. You should not need to become a media buyer to advertise it.',
     recognitionCopy: 'The problem is rarely a lack of ideas. It is finding uninterrupted time to turn an offer into the right audience, ads, budget and settings - while customers and operations still need you.',
@@ -185,6 +194,15 @@ const audiences = {
     finalTitle: 'The product is ready. Give its first sales campaign the same momentum.',
     finalCopy: 'Choose the SKU and offer. Hellyeah will help turn them into a focused campaign while the launch window is still open.',
     heroNote: 'Start with one product. Scale across your catalog, markets and channels.',
+    requestOffer: {
+      type: 'growth_benchmark',
+      kicker: 'Ecommerce growth benchmark',
+      title: 'Benchmark one product before you scale the whole catalog.',
+      copy: 'Use a real product and offer to examine channel role, message match and the measurement signals needed for responsible scaling.',
+      cta: 'Request a growth benchmark',
+      deliverables: ['Product and offer fit', 'Meta, Search and PMax roles', 'Measurement and scaling gates'],
+      note: 'Best for operators choosing where the next acquisition budget should work hardest.',
+    },
     recognitionKicker: 'When the product is ready but the campaign is not',
     recognitionTitle: 'Your next sales opportunity should not wait for another round of ad setup.',
     recognitionCopy: 'You already know the product, price, margin and offer. The slow part is turning those facts into a focused audience, channel, creative angle and budget before the launch window moves on.',
@@ -296,6 +314,15 @@ const audiences = {
     finalTitle: 'Stop letting campaign setup consume the week after the brief is approved.',
     finalCopy: 'Use one real brief to see how much faster your team can move from intent to an accountable launch decision.',
     heroNote: 'Bring one approved brief. Build a repeatable campaign workflow for the whole team.',
+    requestOffer: {
+      type: 'team_workflow_demo',
+      kicker: 'Team workflow demo',
+      title: 'See an approved brief become a governed campaign workflow.',
+      copy: 'Use a real campaign scenario to examine how Hellyeah connects setup, stakeholder review, account scope and final launch authority.',
+      cta: 'Request a team workflow demo',
+      deliverables: ['Brief-to-campaign handoff', 'Stakeholder review path', 'Account scope and launch control'],
+      note: 'Best for teams evaluating throughput without weakening brand, finance or launch governance.',
+    },
     recognitionKicker: 'When an approved brief still takes a week to launch',
     recognitionTitle: 'Your team does not need more campaign ideas. It needs the setup work to stop blocking them.',
     recognitionCopy: 'Research, targeting, first-draft copy, account setup and stakeholder review are individually manageable. Put together, they turn every launch into a queue - and the marketer becomes the human connection between five different tools.',
@@ -407,6 +434,15 @@ const audiences = {
     finalTitle: 'Let the next signed brief become a campaign before it becomes another queue.',
     finalCopy: 'Test Hellyeah on one real client assignment and keep agency judgment and client approval exactly where they belong.',
     heroNote: 'Start with one client. Scale delivery without losing agency or client control.',
+    requestOffer: {
+      type: 'agency_benchmark',
+      kicker: 'Agency delivery benchmark',
+      title: 'Benchmark campaign delivery before adding more clients.',
+      copy: 'Use a representative client brief to examine where Hellyeah can remove repetitive work while preserving agency judgment and client approval.',
+      cta: 'Request an agency benchmark',
+      deliverables: ['Brief-to-build workflow', 'Agency and client approval', 'Cross-account scaling path'],
+      note: 'Best for agencies comparing delivery capacity, control and client-readiness in one workflow.',
+    },
     recognitionKicker: 'When every new client creates the same setup work again',
     recognitionTitle: 'Your margin should come from good media decisions, not disappear into repetitive campaign assembly.',
     recognitionCopy: 'A signed brief is only the beginning. Someone still has to translate it into audience, copy, structure and budget, package it for review, chase approval and rebuild the final version in the ad account.',
@@ -505,6 +541,10 @@ const funnelSteps = audience.funnel.map(([title, event, detail], index) => `
   </li>
 `).join('')
 
+const requestDeliverables = audience.requestOffer.deliverables.map((item) => `
+  <li><span aria-hidden="true">&#10003;</span>${item}</li>
+`).join('')
+
 app.innerHTML = `
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Hellyeah home">
@@ -525,7 +565,7 @@ app.innerHTML = `
         <p class="hero__copy">${audience.intro}</p>
         <div class="hero__actions">
           <a class="primary-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="hero">${signupCta} <span aria-hidden="true">&gt;</span></a>
-          <a class="text-button" href="#how-it-works">See how it works</a>
+          <a class="text-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-request-cta data-request-type="${audience.requestOffer.type}" data-cta-source="hero-request">${audience.requestOffer.cta}</a>
         </div>
         <p class="hero__note">${audience.heroNote}</p>
       </div>
@@ -538,6 +578,21 @@ app.innerHTML = `
         <span>2. Choose goal + offer</span>
         <span>3. Review ads + budget</span>
         <span>4. Approve the launch</span>
+      </div>
+    </section>
+
+    <section class="request-path" id="request-demo" aria-labelledby="request-title">
+      <div class="shell request-path__inner">
+        <div class="request-path__copy reveal">
+          <p class="kicker kicker--dark">${audience.requestOffer.kicker}</p>
+          <h2 id="request-title">${audience.requestOffer.title}</h2>
+          <p>${audience.requestOffer.copy}</p>
+        </div>
+        <div class="request-path__action reveal">
+          <ul class="request-deliverables">${requestDeliverables}</ul>
+          <a class="secondary-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-request-cta data-request-type="${audience.requestOffer.type}" data-cta-source="request-section">${audience.requestOffer.cta} <span aria-hidden="true">&gt;</span></a>
+          <p>${audience.requestOffer.note} Sign in to continue your request.</p>
+        </div>
       </div>
     </section>
 
@@ -807,6 +862,21 @@ document.querySelectorAll('[data-hellyeah-cta]').forEach((link) => {
   link.addEventListener('click', () => {
     const adPanel = link.closest('[data-ad-panel]')
     if (adPanel) emitEvent('ad_click', { format: adPanel.dataset.adPanel })
+    if (link.hasAttribute('data-request-cta')) {
+      const requestDetail = {
+        request_type: link.dataset.requestType,
+        source: link.dataset.ctaSource,
+        destination: hellyeahSignupUrl,
+        trigger: 'cta_click',
+      }
+      emitEvent('request_submitted', requestDetail)
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: 'request_submitted',
+        audience: audienceKey,
+        ...requestDetail,
+      })
+    }
     emitEvent('signup_redirect', {
       source: link.dataset.ctaSource,
       destination: hellyeahSignupUrl,

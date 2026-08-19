@@ -61,7 +61,6 @@ const audiences = {
         gate: 'Clean conversion tracking plus useful response data from the first focused campaign',
       },
     },
-    kpiOptions: ['Qualified leads', 'Online sales', 'Bookings or reservations', 'Store visits', 'Cost per acquisition'],
     funnelTitle: 'Your quickest path from website to live campaign',
     funnelCopy: 'Start with the information you already know about your business. Hellyeah turns it into a campaign, then asks for your approval at the decisions that matter.',
     funnel: [
@@ -72,13 +71,6 @@ const audiences = {
       ['Review your campaign', 'campaign_draft_created', 'Audience, ads and daily budget together'],
       ['Approve and launch', 'campaign_live', 'Your first campaign starts only when you say so'],
     ],
-    businessLabel: 'Business name',
-    websiteLabel: 'Business website',
-    goalLabel: 'What outcome pays the bills?',
-    goalOptions: ['Qualified leads', 'Online sales', 'Store visits', 'Bookings or reservations'],
-    nextLabel: 'Start my first campaign',
-    successTitle: 'Your first campaign brief is ready.',
-    cta: 'Build my first campaign',
     finalTitle: 'Your first campaign should not have to wait for a marketing hire.',
     finalCopy: 'Bring your website and the offer you want to promote. Leave with a campaign you can understand, control and choose to launch.',
     heroNote: '$0 today. No card. No agency handoff. You approve every dollar before launch.',
@@ -180,7 +172,6 @@ const audiences = {
         gate: 'Healthy feed plus reliable purchase/value tracking and enough clean sales signal',
       },
     },
-    kpiOptions: ['Revenue', 'Return on ad spend (ROAS)', 'New customer CPA', 'Conversion value', 'First purchases'],
     funnelTitle: 'Your quickest path from product page to first sale',
     funnelCopy: 'The store and hero product provide the starting point. Hellyeah assembles a focused acquisition campaign, and you keep control of offer, margin and budget.',
     funnel: [
@@ -191,13 +182,6 @@ const audiences = {
       ['Review the sales campaign', 'campaign_draft_created', 'Product, audience, ads and cap'],
       ['Approve and start selling', 'campaign_live', 'Your first commerce campaign goes live'],
     ],
-    businessLabel: 'Store name',
-    websiteLabel: 'Store URL',
-    goalLabel: 'What should the first campaign sell?',
-    goalOptions: ['Hero product', 'New collection', 'Starter bundle', 'Seasonal offer'],
-    nextLabel: 'Start my product campaign',
-    successTitle: 'Your product campaign brief is ready.',
-    cta: 'Launch my product campaign',
     finalTitle: 'The product is ready. Give its first sales campaign the same momentum.',
     finalCopy: 'Choose the SKU and offer. Hellyeah will help turn them into a focused campaign while the launch window is still open.',
     heroNote: '$0 today. No card. One store, one product campaign and one budget you control.',
@@ -299,7 +283,6 @@ const audiences = {
         gate: 'Clean measurement, clear exclusions and an agreed scaling threshold',
       },
     },
-    kpiOptions: ['Qualified leads', 'Pipeline generated', 'Revenue', 'CPA or CPL', 'Campaign activation'],
     funnelTitle: 'Your quickest path from brief to approved launch',
     funnelCopy: 'The team begins with an existing brief and finishes with a campaign ready for accountable approval. Hellyeah accelerates setup without removing governance.',
     funnel: [
@@ -310,13 +293,6 @@ const audiences = {
       ['Review the actual campaign', 'campaign_draft_created', 'Audience, ads, rationale and cap'],
       ['Authorize the launch', 'campaign_live', 'The first approved campaign goes live'],
     ],
-    businessLabel: 'Company name',
-    websiteLabel: 'Company website',
-    goalLabel: 'Which workflow needs to move faster?',
-    goalOptions: ['New campaign launch', 'Cross-channel test', 'Lead generation', 'Market expansion'],
-    nextLabel: 'Start my team campaign',
-    successTitle: 'Your team campaign brief is ready.',
-    cta: 'Turn my brief into a campaign',
     finalTitle: 'Stop letting campaign setup consume the week after the brief is approved.',
     finalCopy: 'Use one real brief to see how much faster your team can move from intent to an accountable launch decision.',
     heroNote: '$0 today. No card. One workspace, one campaign and final approval stays in-house.',
@@ -418,7 +394,6 @@ const audiences = {
         gate: 'Scoped account access, clean tracking and client-approved scaling rules',
       },
     },
-    kpiOptions: ['Client leads or sales', 'Return on ad spend (ROAS)', 'CPA or CPL', 'Conversion volume', 'On-time campaign launch'],
     funnelTitle: 'Your quickest path from client brief to approved launch',
     funnelCopy: 'The agency starts with a signed brief and ends with a client-approved campaign. One workspace carries the goal, ads, budget and approval through the whole path.',
     funnel: [
@@ -429,13 +404,6 @@ const audiences = {
       ['Review together', 'campaign_draft_created', 'Agency edits, client sees the same setup'],
       ['Approve and launch', 'campaign_live', 'The first client campaign goes live'],
     ],
-    businessLabel: 'Agency name',
-    websiteLabel: 'Agency website',
-    goalLabel: 'Which client workflow should the pilot prove?',
-    goalOptions: ['New client launch', 'Campaign refresh', 'Lead generation', 'Cross-channel plan'],
-    nextLabel: 'Start my client campaign',
-    successTitle: 'Your client campaign brief is ready.',
-    cta: 'Build my next client campaign',
     finalTitle: 'Let the next signed brief become a campaign before it becomes another queue.',
     finalCopy: 'Test Hellyeah on one real client assignment and keep agency judgment and client approval exactly where they belong.',
     heroNote: '$0 today. No card. One client workspace with agency and client approval before launch.',
@@ -480,6 +448,8 @@ const audiences = {
 const audienceKey = document.body.dataset.audience
 const audience = audiences[audienceKey] || audiences.founders
 const app = document.querySelector('#app')
+const hellyeahSignupUrl = 'https://app.hellyeahai.com/sign-in?redirect_url=https%3A%2F%2Fapp.hellyeahai.com%2F'
+const signupCta = 'Start with Hellyeah'
 
 const planRows = Object.entries(audience.plan).filter(([key]) => key !== 'name' && key !== 'status').map(([key, value]) => `
   <div class="plan-row"><span>${key}</span><strong>${value}</strong></div>
@@ -535,30 +505,13 @@ const funnelSteps = audience.funnel.map(([title, event, detail], index) => `
   </li>
 `).join('')
 
-const spendRanges = [
-  ['under5', 'Under US$5K'],
-  ['5to20', 'US$5K-US$20K'],
-  ['20to50', 'US$20K-US$50K'],
-  ['50to100', 'US$50K-US$100K'],
-  ['over100', 'Above US$100K'],
-]
-const activeChannels = ['Meta Ads', 'Google Ads', 'TikTok Ads', 'LinkedIn Ads', 'Other', 'None yet']
-const targetCountries = ['Malaysia', 'Philippines', 'Singapore', 'Thailand', 'Indonesia', 'Vietnam', 'Other SEA']
-const spendOptions = spendRanges.map(([value, label]) => `<option value="${value}">${label}</option>`).join('')
-const choiceOptions = (name, options) => options.map((option, index) => `
-  <label class="choice-option" for="${name}-${index}">
-    <input id="${name}-${index}" name="${name}" type="checkbox" value="${option}" />
-    <span>${option}</span>
-  </label>
-`).join('')
-
 app.innerHTML = `
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Hellyeah home">
       <span class="brand__mark" aria-hidden="true">H!</span>
       <span class="brand__name">Hellyeah</span>
     </a>
-    <button class="header-cta" type="button" data-open-pilot>Start free pilot</button>
+    <a class="header-cta" href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="header">${signupCta}</a>
   </header>
 
   <main id="top">
@@ -571,7 +524,7 @@ app.innerHTML = `
         <p class="hero__promise">${audience.hero}</p>
         <p class="hero__copy">${audience.intro}</p>
         <div class="hero__actions">
-          <button class="primary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
+          <a class="primary-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="hero">${signupCta} <span aria-hidden="true">&gt;</span></a>
           <a class="text-button" href="#how-it-works">See how it works</a>
         </div>
         <p class="hero__note">${audience.heroNote}</p>
@@ -605,7 +558,7 @@ app.innerHTML = `
           <p class="kicker kicker--dark">${audience.offerLine}</p>
           <h2>${audience.outcomeTitle}</h2>
           <p>${audience.outcomeCopy}</p>
-          <button class="secondary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
+          <a class="secondary-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="campaign-preview">${signupCta} <span aria-hidden="true">&gt;</span></a>
         </div>
         <div class="product-preview reveal" aria-label="Launch-ready campaign preview">
           <div class="product-preview__top">
@@ -724,7 +677,7 @@ app.innerHTML = `
             </div>
             <div class="meta-ad__link">
               <div><span>HELLYEAH.AI</span><strong>${audience.metaHeadline}</strong><small>One campaign. One account. You approve the launch.</small></div>
-              <button type="button" data-open-pilot>Start free pilot</button>
+              <a href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="meta-preview">${signupCta}</a>
             </div>
             <div class="meta-ad__social" aria-hidden="true"><span>Like</span><span>Comment</span><span>Share</span></div>
             </article>
@@ -754,7 +707,7 @@ app.innerHTML = `
                 <div><dt>Asset theme</dt><dd>${audience.channelStory.pmax.asset}</dd></div>
                 <div><dt>Activation gate</dt><dd>${audience.channelStory.pmax.gate}</dd></div>
               </dl>
-              <button class="secondary-button" type="button" data-open-pilot>Define my campaign inputs <span aria-hidden="true">&gt;</span></button>
+              <a class="secondary-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="pmax-plan">${signupCta} <span aria-hidden="true">&gt;</span></a>
             </article>
           </div>
         </div>
@@ -779,7 +732,7 @@ app.innerHTML = `
           <h2>Do the real work once.<br />Decide from the result.</h2>
           <p>Use one real business, product, team brief or client assignment. Take it through the campaign flow and judge Hellyeah by the work you can actually review.</p>
           <div class="pilot-value__terms"><strong>$0 today</strong><span>No card</span><span>Media spend excluded</span><span>Under US$50K/month</span></div>
-          <button class="primary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
+          <a class="primary-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="pilot-value">${signupCta} <span aria-hidden="true">&gt;</span></a>
         </div>
         <div class="pilot-outcomes">${pilotOutcomeRows}</div>
       </div>
@@ -800,7 +753,7 @@ app.innerHTML = `
         <p class="kicker">Malaysia / Philippines / Singapore / Thailand</p>
         <h2>${audience.finalTitle}</h2>
         <p class="final-cta__copy">${audience.finalCopy}</p>
-        <button class="primary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
+        <a class="primary-button" href="${hellyeahSignupUrl}" data-hellyeah-cta data-cta-source="final-cta">${signupCta} <span aria-hidden="true">&gt;</span></a>
         <p>$0 today. No card. Media spend not included.</p>
       </div>
     </section>
@@ -814,90 +767,6 @@ app.innerHTML = `
     </div>
   </footer>
 
-  <dialog class="pilot-dialog" aria-labelledby="pilot-title">
-    <form class="pilot-form" novalidate>
-      <div class="pilot-dialog__header">
-        <div><span>FREE 14-DAY PILOT</span><h2 id="pilot-title">${audience.nextLabel}</h2></div>
-        <button class="icon-button" type="button" data-close-pilot aria-label="Close pilot form">x</button>
-      </div>
-      <ol class="pilot-progress" aria-label="Pilot progress">
-        <li class="is-active" data-progress="1"><span>1</span><small>Client</small></li>
-        <li data-progress="2"><span>2</span><small>Spend</small></li>
-        <li data-progress="3"><span>3</span><small>Markets</small></li>
-        <li data-progress="4"><span>4</span><small>KPIs</small></li>
-      </ol>
-
-      <section class="pilot-step is-active" data-step="1">
-        <p class="pilot-step__eyebrow">Step 1 / Client</p>
-        <h3>Start with the business</h3>
-        <p>Add the name and the page Hellyeah should use as campaign context. An app store listing is accepted too.</p>
-        <div class="form-grid">
-          <label>Client Name<input name="clientName" autocomplete="organization" placeholder="Business, brand or client name" required /></label>
-          <label>Website or App Link<input name="website" type="url" inputmode="url" placeholder="https://" required /></label>
-        </div>
-      </section>
-
-      <section class="pilot-step" data-step="2" hidden>
-        <p class="pilot-step__eyebrow">Step 2 / Investment</p>
-        <h3>Set the current and target scale</h3>
-        <p>Use total monthly media spend across all channels. This helps Hellyeah shape a realistic first test and a sensible path to scale.</p>
-        <div class="form-grid">
-          <label>Current Monthly Spend (All Channels)<select name="currentSpend" required><option value="">Select range</option>${spendOptions}</select></label>
-          <label>Target Monthly Spend (All Channels)<select name="targetSpend" required><option value="">Select range</option>${spendOptions}</select></label>
-        </div>
-        <p class="qualification-note" data-qualification-note hidden>Current spend is above the self-serve pilot range. You can still submit the brief; Hellyeah will route it to a guided evaluation before any account connection or launch decision.</p>
-      </section>
-
-      <section class="pilot-step" data-step="3" hidden>
-        <p class="pilot-step__eyebrow">Step 3 / Channels and markets</p>
-        <h3>Show us where the campaign begins</h3>
-        <p>Select every channel currently active and every country the next campaign should target. No ad-account login is requested at this stage.</p>
-        <fieldset class="choice-group" data-required-group="activeChannels">
-          <legend>Active Channels</legend>
-          <div class="choice-grid">${choiceOptions('activeChannels', activeChannels)}</div>
-          <p class="choice-status" aria-live="polite"></p>
-        </fieldset>
-        <fieldset class="choice-group" data-required-group="targetCountries">
-          <legend>Target Countries</legend>
-          <div class="choice-grid">${choiceOptions('targetCountries', targetCountries)}</div>
-          <p class="choice-status" aria-live="polite"></p>
-        </fieldset>
-      </section>
-
-      <section class="pilot-step" data-step="4" hidden>
-        <p class="pilot-step__eyebrow">Step 4 / KPIs and review</p>
-        <h3>Define what success must improve</h3>
-        <p>Choose the KPIs that should guide the channel plan, then review the complete pilot brief before submitting it.</p>
-        <fieldset class="choice-group choice-group--compact" data-required-group="campaignKpis">
-          <legend>Campaign KPIs</legend>
-          <div class="choice-grid">${choiceOptions('campaignKpis', audience.kpiOptions)}</div>
-          <p class="choice-status" aria-live="polite"></p>
-        </fieldset>
-        <div class="review-summary">
-          <div><span>Client Name</span><strong data-review="clientName"></strong></div>
-          <div><span>Website or App Link</span><strong data-review="website"></strong></div>
-          <div><span>Current Monthly Spend</span><strong data-review="currentSpend"></strong></div>
-          <div><span>Target Monthly Spend</span><strong data-review="targetSpend"></strong></div>
-          <div class="review-summary__wide"><span>Active Channels</span><strong data-review="activeChannels"></strong></div>
-          <div class="review-summary__wide"><span>Target Countries</span><strong data-review="targetCountries"></strong></div>
-          <div class="review-summary__wide"><span>Campaign KPIs</span><strong data-review="campaignKpis"></strong></div>
-        </div>
-        <label class="approval-check"><input name="approval" type="checkbox" required /><span>I confirm this brief reflects the campaign Hellyeah should prepare. Submitting it does not connect an ad account or launch ads.</span></label>
-      </section>
-
-      <section class="pilot-success" hidden>
-        <span class="success-mark" aria-hidden="true">OK</span>
-        <h3>${audience.successTitle}</h3>
-        <p data-success-copy>This prototype has captured the inputs Hellyeah would use to prepare the first campaign plan. Account connection and launch approval remain separate steps.</p>
-        <div class="success-events"><span>Client added</span><span>Spend mapped</span><span>Markets selected</span><span>KPIs defined</span></div>
-      </section>
-
-      <div class="pilot-actions">
-        <button class="back-button" type="button" data-back hidden>Back</button>
-        <button class="primary-button" type="button" data-next>Continue <span aria-hidden="true">&gt;</span></button>
-      </div>
-    </form>
-  </dialog>
 `
 
 document.documentElement.style.setProperty('--accent', audience.accent)
@@ -934,176 +803,13 @@ document.querySelectorAll('[data-ad-tab]').forEach((tab) => {
   })
 })
 
-const dialog = document.querySelector('.pilot-dialog')
-const form = document.querySelector('.pilot-form')
-const nextButton = document.querySelector('[data-next]')
-const backButton = document.querySelector('[data-back]')
-const qualificationNote = document.querySelector('[data-qualification-note]')
-const spendSelect = form.elements.currentSpend
-let currentStep = 1
-
-const openPilotDialog = () => {
-  document.body.classList.add('dialog-open')
-  if (typeof dialog.showModal === 'function') {
-    dialog.showModal()
-  } else {
-    document.body.classList.add('dialog-fallback-open')
-    dialog.setAttribute('open', '')
-    dialog.classList.add('is-fallback-open')
-  }
-}
-
-const closePilotDialog = () => {
-  if (typeof dialog.close === 'function' && dialog.open) {
-    dialog.close()
-  } else {
-    dialog.removeAttribute('open')
-    dialog.classList.remove('is-fallback-open')
-    dialog.dispatchEvent(new Event('close'))
-  }
-}
-
-const showStep = (step) => {
-  currentStep = step
-  document.querySelectorAll('.pilot-step').forEach((panel) => {
-    const active = Number(panel.dataset.step) === step
-    panel.classList.toggle('is-active', active)
-    panel.hidden = !active
-  })
-  document.querySelectorAll('[data-progress]').forEach((item) => {
-    const itemStep = Number(item.dataset.progress)
-    item.classList.toggle('is-active', itemStep === step)
-    item.classList.toggle('is-complete', itemStep < step)
-  })
-  backButton.hidden = step === 1
-  nextButton.innerHTML = step === 4 ? 'Submit pilot brief <span aria-hidden="true">&gt;</span>' : 'Continue <span aria-hidden="true">&gt;</span>'
-}
-
-const validateStep = (step) => {
-  const panel = document.querySelector(`[data-step="${step}"]`)
-  for (const group of panel.querySelectorAll('[data-required-group]')) {
-    const status = group.querySelector('.choice-status')
-    if (!group.querySelector('input:checked')) {
-      status.textContent = 'Select at least one option to continue.'
-      group.querySelector('input').focus()
-      return false
-    }
-    status.textContent = ''
-  }
-  const fields = [...panel.querySelectorAll('[required]:not([type="hidden"])')]
-  for (const field of fields) {
-    if (!field.checkValidity()) {
-      field.reportValidity()
-      return false
-    }
-  }
-  return true
-}
-
-const fillReview = () => {
-  const data = new FormData(form)
-  document.querySelectorAll('[data-review]').forEach((item) => {
-    const name = item.dataset.review
-    const field = form.elements[name]
-    const values = data.getAll(name)
-    if (field instanceof HTMLSelectElement && field.value) {
-      item.textContent = field.selectedOptions[0].textContent
-    } else {
-      item.textContent = values.length ? values.join(', ') : '-'
-    }
-  })
-}
-
-document.querySelectorAll('[data-open-pilot]').forEach((button) => {
-  button.addEventListener('click', () => {
-    const adPanel = button.closest('[data-ad-panel]')
-    const sourceSection = button.closest('section')
+document.querySelectorAll('[data-hellyeah-cta]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const adPanel = link.closest('[data-ad-panel]')
     if (adPanel) emitEvent('ad_click', { format: adPanel.dataset.adPanel })
-    emitEvent('pilot_brief_started', { source: sourceSection ? sourceSection.className : 'header' })
-    openPilotDialog()
-    window.setTimeout(() => form.elements.clientName.focus(), 50)
+    emitEvent('signup_redirect', {
+      source: link.dataset.ctaSource,
+      destination: hellyeahSignupUrl,
+    })
   })
-})
-
-document.querySelector('[data-close-pilot]').addEventListener('click', closePilotDialog)
-dialog.addEventListener('click', (event) => {
-  if (event.target === dialog) closePilotDialog()
-})
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && dialog.hasAttribute('open')) closePilotDialog()
-})
-
-spendSelect.addEventListener('change', () => {
-  qualificationNote.hidden = !['50to100', 'over100'].includes(spendSelect.value)
-})
-
-form.addEventListener('change', (event) => {
-  const group = event.target.closest('[data-required-group]')
-  if (group && group.querySelector('input:checked')) group.querySelector('.choice-status').textContent = ''
-  fillReview()
-})
-
-nextButton.addEventListener('click', () => {
-  if (nextButton.dataset.complete === 'true') {
-    closePilotDialog()
-    return
-  }
-
-  if (!validateStep(currentStep)) return
-
-  if (currentStep === 1) {
-    emitEvent('client_profile_added', { clientName: form.elements.clientName.value })
-    showStep(2)
-  } else if (currentStep === 2) {
-    emitEvent('spend_profile_added', {
-      currentSpend: form.elements.currentSpend.value,
-      targetSpend: form.elements.targetSpend.value,
-    })
-    showStep(3)
-  } else if (currentStep === 3) {
-    const data = new FormData(form)
-    emitEvent('channel_market_added', {
-      activeChannels: data.getAll('activeChannels'),
-      targetCountries: data.getAll('targetCountries'),
-    })
-    fillReview()
-    showStep(4)
-  } else if (currentStep === 4) {
-    const enterprisePath = ['50to100', 'over100'].includes(form.elements.currentSpend.value)
-    const data = new FormData(form)
-    emitEvent(enterprisePath ? 'guided_evaluation_requested' : 'pilot_brief_submitted', {
-      activeChannels: data.getAll('activeChannels'),
-      targetCountries: data.getAll('targetCountries'),
-      campaignKpis: data.getAll('campaignKpis'),
-    })
-    document.querySelectorAll('.pilot-step, .pilot-progress').forEach((item) => { item.hidden = true })
-    document.querySelector('.pilot-success').hidden = false
-    document.querySelector('.pilot-success').classList.add('is-active')
-    document.querySelector('[data-success-copy]').textContent = enterprisePath
-      ? 'Your pilot brief is complete. Because current spend is above the self-serve range, the next step is a guided evaluation before account connection or launch.'
-      : 'This prototype has captured the inputs Hellyeah would use to prepare the first campaign plan. Account connection and launch approval remain separate steps.'
-    backButton.hidden = true
-    nextButton.textContent = 'Close'
-    nextButton.dataset.complete = 'true'
-  }
-})
-
-backButton.addEventListener('click', () => {
-  if (currentStep > 1) showStep(currentStep - 1)
-})
-
-dialog.addEventListener('close', () => {
-  document.body.classList.remove('dialog-open')
-  document.body.classList.remove('dialog-fallback-open')
-  dialog.classList.remove('is-fallback-open')
-  if (nextButton.dataset.complete !== 'true') return
-  form.reset()
-  delete nextButton.dataset.complete
-  nextButton.innerHTML = 'Continue <span aria-hidden="true">&gt;</span>'
-  document.querySelector('.pilot-success').hidden = true
-  document.querySelector('.pilot-success').classList.remove('is-active')
-  document.querySelector('.pilot-progress').hidden = false
-  document.querySelectorAll('.choice-status').forEach((item) => { item.textContent = '' })
-  qualificationNote.hidden = true
-  showStep(1)
 })

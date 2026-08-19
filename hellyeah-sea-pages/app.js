@@ -34,6 +34,34 @@ const audiences = {
     metaHeadline: 'Start your first campaign free for 14 days.',
     googleHeadlines: ['Start Your First Ad Campaign', 'Free 14-Day Pilot', 'You Approve the Budget'],
     googleDescription: 'Add your website and goal. Get a Meta or Google campaign ready to review and launch. $0 today. No card.',
+    channelStory: {
+      kicker: 'Channel plan for owner-led businesses',
+      title: 'Create interest where customers browse. Capture intent when they search.',
+      intro: 'A first campaign does not need every Google and Meta format at once. It needs two clear jobs, one offer and enough clean response data to decide what should scale next.',
+      meta: {
+        eyebrow: 'Role 01 / Create demand',
+        title: 'Why Meta starts with a feed-style preview',
+        reason: 'Potential customers may fit your offer without searching for it today. Meta lets Hellyeah put the problem, benefit and 14-day offer in front of them while they browse.',
+        preview: 'Feed is shown because it makes the full message, image and offer easy to inspect on this page.',
+        delivery: 'At launch, Meta Advantage+ placements can adapt the same campaign across Feed, Stories, Reels and other eligible placements.',
+      },
+      search: {
+        eyebrow: 'Role 02 / Capture intent',
+        title: 'Why Google Search is the second starting point',
+        reason: 'Search reaches people already looking for help with advertising, lead generation or a specific business need. The keyword, promise and landing page can be checked together before spend begins.',
+        intent: 'Example intent: "AI advertising for small business", "run ads for my business", and service-specific searches tied to your offer.',
+        control: 'Start with a focused keyword set and one measurable action, then expand from real search-term data.',
+      },
+      pmax: {
+        eyebrow: 'Phase 2 / Scale proven signals',
+        title: 'Why Performance Max is not the cold-start preview',
+        reason: 'PMax distributes assets across several Google surfaces. For a new advertiser, launching it before the primary conversion is verified makes it harder to see which message and demand source are working.',
+        goal: 'Verified lead, booking or purchase',
+        asset: 'Owner story, customer proof and offer-led creative',
+        gate: 'Clean conversion tracking plus useful response data from the first focused campaign',
+      },
+    },
+    kpiOptions: ['Qualified leads', 'Online sales', 'Bookings or reservations', 'Store visits', 'Cost per acquisition'],
     funnelTitle: 'Your quickest path from website to live campaign',
     funnelCopy: 'Start with the information you already know about your business. Hellyeah turns it into a campaign, then asks for your approval at the decisions that matter.',
     funnel: [
@@ -49,7 +77,7 @@ const audiences = {
     goalLabel: 'What outcome pays the bills?',
     goalOptions: ['Qualified leads', 'Online sales', 'Store visits', 'Bookings or reservations'],
     nextLabel: 'Start my first campaign',
-    successTitle: 'Your first campaign is ready.',
+    successTitle: 'Your first campaign brief is ready.',
     cta: 'Build my first campaign',
     finalTitle: 'Your first campaign should not have to wait for a marketing hire.',
     finalCopy: 'Bring your website and the offer you want to promote. Leave with a campaign you can understand, control and choose to launch.',
@@ -125,6 +153,34 @@ const audiences = {
     metaHeadline: 'Start one product campaign free for 14 days.',
     googleHeadlines: ['Launch Your Next Product', 'Free 14-Day Store Pilot', 'Review Budget Before Launch'],
     googleDescription: 'Turn one product page into a sales campaign. Connect one account, review the ads and approve the launch.',
+    channelStory: {
+      kicker: 'Channel plan for ecommerce growth',
+      title: 'Introduce the product on Meta. Capture product intent on Search.',
+      intro: 'The first test should answer a commercial question: can this product and offer acquire a customer at an acceptable cost? Each channel gets a distinct job so the result is readable.',
+      meta: {
+        eyebrow: 'Role 01 / Product discovery',
+        title: 'Why Meta starts with an offer-led product ad',
+        reason: 'Meta can introduce a product before the shopper has formed a search. Hellyeah tests the product benefit, visual angle and customer offer against a clearly defined audience.',
+        preview: 'Feed is the readable sample because it shows the product story, incentive and landing-page promise together.',
+        delivery: 'The live campaign can use Advantage+ placements to adapt assets across Feed, Stories, Reels and other eligible placements.',
+      },
+      search: {
+        eyebrow: 'Role 02 / Product intent',
+        title: 'Why Google Search gets a focused first test',
+        reason: 'Search captures shoppers who already describe the category, problem or product they want. It gives the operator direct visibility into query, offer and conversion performance.',
+        intent: 'Example intent: product category, problem-to-solve, brand alternative and promotion-led searches connected to the selected SKU.',
+        control: 'Keep the first keyword set and landing page tight enough to learn whether the offer converts.',
+      },
+      pmax: {
+        eyebrow: 'Phase 2 / Commerce scale',
+        title: 'When Performance Max becomes useful',
+        reason: 'PMax can combine a product feed with text, image and video assets across Google inventory. It is stronger after purchase tracking and conversion value are reliable, not as a substitute for basic store readiness.',
+        goal: 'Verified purchase value and ROAS target',
+        asset: 'Merchant Center feed, product images, offers and short video',
+        gate: 'Healthy feed plus reliable purchase/value tracking and enough clean sales signal',
+      },
+    },
+    kpiOptions: ['Revenue', 'Return on ad spend (ROAS)', 'New customer CPA', 'Conversion value', 'First purchases'],
     funnelTitle: 'Your quickest path from product page to first sale',
     funnelCopy: 'The store and hero product provide the starting point. Hellyeah assembles a focused acquisition campaign, and you keep control of offer, margin and budget.',
     funnel: [
@@ -140,7 +196,7 @@ const audiences = {
     goalLabel: 'What should the first campaign sell?',
     goalOptions: ['Hero product', 'New collection', 'Starter bundle', 'Seasonal offer'],
     nextLabel: 'Start my product campaign',
-    successTitle: 'Your product campaign is ready.',
+    successTitle: 'Your product campaign brief is ready.',
     cta: 'Launch my product campaign',
     finalTitle: 'The product is ready. Give its first sales campaign the same momentum.',
     finalCopy: 'Choose the SKU and offer. Hellyeah will help turn them into a focused campaign while the launch window is still open.',
@@ -216,6 +272,34 @@ const audiences = {
     metaHeadline: 'Go from brief to campaign free for 14 days.',
     googleHeadlines: ['Turn Briefs Into Campaigns', 'Free 14-Day Team Pilot', 'Keep Final Approval'],
     googleDescription: 'Skip repetitive campaign setup. Review the audience, ads and cap, then approve the launch.',
+    channelStory: {
+      kicker: 'Channel plan for lean in-house teams',
+      title: 'Build consideration on Meta. Capture declared demand on Search.',
+      intro: 'A lean team needs a channel plan stakeholders can audit, not a bundle of placements with one blended explanation. Hellyeah gives each starting channel a job and keeps the activation gate visible.',
+      meta: {
+        eyebrow: 'Role 01 / Build consideration',
+        title: 'Why Meta carries the pain and workflow story',
+        reason: 'Many qualified buyers recognize the campaign-setup problem before they search for a solution. Meta gives the team room to test pain-led, outcome-led and proof-led messages.',
+        preview: 'The feed format is a review surface for brand, offer and creative hierarchy, not a promise to buy Feed only.',
+        delivery: 'With approval, Advantage+ placements can adapt the campaign across Feed, Stories, Reels and other eligible Meta inventory.',
+      },
+      search: {
+        eyebrow: 'Role 02 / Capture declared demand',
+        title: 'Why Search provides the cleanest intent test',
+        reason: 'Search connects a stated need to a specific landing-page promise. The team can inspect queries, exclusions, message match and the primary KPI without losing the rationale in a blended campaign.',
+        intent: 'Example intent: campaign automation, AI media buying workflow, faster campaign launch and use-case searches tied to the approved brief.',
+        control: 'Use focused themes, verified conversion actions and named approval before adding broader inventory.',
+      },
+      pmax: {
+        eyebrow: 'Phase 2 / Governed expansion',
+        title: 'Why Performance Max follows measurement readiness',
+        reason: 'PMax can extend reach across Google, but the team first needs a verified primary goal, approved assets and a baseline for interpreting the blended result.',
+        goal: 'Verified primary lead, pipeline or revenue action',
+        asset: 'Approved brand pack, use-case proof, images and video',
+        gate: 'Clean measurement, clear exclusions and an agreed scaling threshold',
+      },
+    },
+    kpiOptions: ['Qualified leads', 'Pipeline generated', 'Revenue', 'CPA or CPL', 'Campaign activation'],
     funnelTitle: 'Your quickest path from brief to approved launch',
     funnelCopy: 'The team begins with an existing brief and finishes with a campaign ready for accountable approval. Hellyeah accelerates setup without removing governance.',
     funnel: [
@@ -231,7 +315,7 @@ const audiences = {
     goalLabel: 'Which workflow needs to move faster?',
     goalOptions: ['New campaign launch', 'Cross-channel test', 'Lead generation', 'Market expansion'],
     nextLabel: 'Start my team campaign',
-    successTitle: 'Your team campaign is ready.',
+    successTitle: 'Your team campaign brief is ready.',
     cta: 'Turn my brief into a campaign',
     finalTitle: 'Stop letting campaign setup consume the week after the brief is approved.',
     finalCopy: 'Use one real brief to see how much faster your team can move from intent to an accountable launch decision.',
@@ -307,6 +391,34 @@ const audiences = {
     metaHeadline: 'Start the next client campaign free for 14 days.',
     googleHeadlines: ['Launch Client Campaigns Faster', 'Free 14-Day Client Pilot', 'Client Approval Built In'],
     googleDescription: 'Turn one client brief into a Meta or Google campaign. Review together, then approve the first launch.',
+    channelStory: {
+      kicker: 'Channel plan for agencies',
+      title: 'Reach teams feeling the capacity pain. Capture buyers seeking an alternative.',
+      intro: 'For an agency, the first campaign also needs to prove a delivery model: faster assembly, clear client review and no ambiguity about account access or approval.',
+      meta: {
+        eyebrow: 'Role 01 / Surface the capacity problem',
+        title: 'Why Meta leads with the delivery bottleneck',
+        reason: 'Agency owners and media buyers may not be searching for a new workflow, but they immediately recognize repetitive setup, approval delays and margin pressure when the message reaches them.',
+        preview: 'Feed is used as the clearest client-review sample for the hook, proof, offer and call to action.',
+        delivery: 'The approved campaign can use Advantage+ placements across Feed, Stories, Reels and other eligible placements without changing the core promise.',
+      },
+      search: {
+        eyebrow: 'Role 02 / Capture solution demand',
+        title: 'Why Search catches active workflow buyers',
+        reason: 'Search reaches teams already comparing campaign automation, ad operations software or delivery alternatives. A focused setup keeps query quality and lead value visible to the agency.',
+        intent: 'Example intent: agency campaign automation, Meta and Google workflow tools, client approval software and ad-ops capacity solutions.',
+        control: 'Map each intent theme to one client-safe promise and one qualified-lead action.',
+      },
+      pmax: {
+        eyebrow: 'Phase 2 / Client-ready scale',
+        title: 'Why Performance Max comes after the proof point',
+        reason: 'PMax is not the first demonstration of agency control. It needs clean client conversion goals, sufficient assets and clearly scoped permissions before cross-inventory automation can be judged responsibly.',
+        goal: 'Verified client lead, sale or conversion value',
+        asset: 'Client-approved copy, images, video and audience signals',
+        gate: 'Scoped account access, clean tracking and client-approved scaling rules',
+      },
+    },
+    kpiOptions: ['Client leads or sales', 'Return on ad spend (ROAS)', 'CPA or CPL', 'Conversion volume', 'On-time campaign launch'],
     funnelTitle: 'Your quickest path from client brief to approved launch',
     funnelCopy: 'The agency starts with a signed brief and ends with a client-approved campaign. One workspace carries the goal, ads, budget and approval through the whole path.',
     funnel: [
@@ -322,7 +434,7 @@ const audiences = {
     goalLabel: 'Which client workflow should the pilot prove?',
     goalOptions: ['New client launch', 'Campaign refresh', 'Lead generation', 'Cross-channel plan'],
     nextLabel: 'Start my client campaign',
-    successTitle: 'Your client campaign is ready.',
+    successTitle: 'Your client campaign brief is ready.',
     cta: 'Build my next client campaign',
     finalTitle: 'Let the next signed brief become a campaign before it becomes another queue.',
     finalCopy: 'Test Hellyeah on one real client assignment and keep agency judgment and client approval exactly where they belong.',
@@ -427,7 +539,22 @@ const funnelSteps = audience.funnel.map(([title, event, detail], index) => `
   </li>
 `).join('')
 
-const goalOptions = audience.goalOptions.map((option) => `<option value="${option}">${option}</option>`).join('')
+const spendRanges = [
+  ['under5', 'Under US$5K'],
+  ['5to20', 'US$5K-US$20K'],
+  ['20to50', 'US$20K-US$50K'],
+  ['50to100', 'US$50K-US$100K'],
+  ['over100', 'Above US$100K'],
+]
+const activeChannels = ['Meta Ads', 'Google Ads', 'TikTok Ads', 'LinkedIn Ads', 'Other', 'None yet']
+const targetCountries = ['Malaysia', 'Philippines', 'Singapore', 'Thailand', 'Indonesia', 'Vietnam', 'Other SEA']
+const spendOptions = spendRanges.map(([value, label]) => `<option value="${value}">${label}</option>`).join('')
+const choiceOptions = (name, options) => options.map((option, index) => `
+  <label class="choice-option" for="${name}-${index}">
+    <input id="${name}-${index}" name="${name}" type="checkbox" value="${option}" />
+    <span>${option}</span>
+  </label>
+`).join('')
 
 app.innerHTML = `
   <header class="site-header">
@@ -545,19 +672,52 @@ app.innerHTML = `
     </section>
 
     <section class="ads section" id="ad-mockups">
-      <div class="shell ads__layout">
-        <div class="section-copy section-copy--light reveal">
-          <p class="kicker">Message-matched ad samples</p>
-          <h2>The offer is visible before the click.</h2>
-          <p>See the ads your audience would receive before you connect an account. The pilot terms and the outcome stay consistent from first click to launch.</p>
-          <div class="ad-tabs" role="tablist" aria-label="Ad sample format">
-            <button class="is-active" type="button" role="tab" aria-selected="true" data-ad-tab="meta">Meta feed</button>
-            <button type="button" role="tab" aria-selected="false" data-ad-tab="google">Google Search</button>
-          </div>
+      <div class="shell">
+        <div class="ads__intro reveal">
+          <p class="kicker">${audience.channelStory.kicker}</p>
+          <h2>${audience.channelStory.title}</h2>
+          <p>${audience.channelStory.intro}</p>
+        </div>
+        <div class="ad-tabs" role="tablist" aria-label="Campaign channel plan">
+          <button class="is-active" type="button" role="tab" aria-selected="true" data-ad-tab="meta">Meta discovery</button>
+          <button type="button" role="tab" aria-selected="false" data-ad-tab="google">Google Search</button>
+          <button type="button" role="tab" aria-selected="false" data-ad-tab="pmax">PMax later</button>
         </div>
 
-        <div class="ad-stage reveal">
-          <article class="meta-ad" data-ad-panel="meta" aria-label="Meta advertisement sample">
+        <div class="ads__layout">
+          <div class="channel-explainer reveal">
+            <article class="channel-note" data-ad-panel="meta">
+              <p class="channel-note__eyebrow">${audience.channelStory.meta.eyebrow}</p>
+              <h3>${audience.channelStory.meta.title}</h3>
+              <p>${audience.channelStory.meta.reason}</p>
+              <dl>
+                <div><dt>What this sample shows</dt><dd>${audience.channelStory.meta.preview}</dd></div>
+                <div><dt>How the live campaign can deliver</dt><dd>${audience.channelStory.meta.delivery}</dd></div>
+              </dl>
+            </article>
+            <article class="channel-note" data-ad-panel="google" hidden>
+              <p class="channel-note__eyebrow">${audience.channelStory.search.eyebrow}</p>
+              <h3>${audience.channelStory.search.title}</h3>
+              <p>${audience.channelStory.search.reason}</p>
+              <dl>
+                <div><dt>Intent Hellyeah would map</dt><dd>${audience.channelStory.search.intent}</dd></div>
+                <div><dt>How the first test stays readable</dt><dd>${audience.channelStory.search.control}</dd></div>
+              </dl>
+            </article>
+            <article class="channel-note" data-ad-panel="pmax" hidden>
+              <p class="channel-note__eyebrow">${audience.channelStory.pmax.eyebrow}</p>
+              <h3>${audience.channelStory.pmax.title}</h3>
+              <p>${audience.channelStory.pmax.reason}</p>
+              <dl>
+                <div><dt>What PMax needs from this campaign</dt><dd>${audience.channelStory.pmax.gate}</dd></div>
+                <div><dt>What changes when it is ready</dt><dd>Hellyeah prepares an asset group for cross-inventory delivery instead of pretending PMax is one fixed ad format.</dd></div>
+              </dl>
+            </article>
+          </div>
+
+          <div class="ad-stage reveal">
+            <article class="meta-ad" data-ad-panel="meta" aria-label="Meta feed-style advertisement preview">
+              <p class="sample-label"><strong>Readable preview</strong><span>Feed-style sample / multi-placement campaign</span></p>
             <div class="meta-ad__header">
               <span class="meta-ad__avatar">H!</span>
               <div><strong>Hellyeah</strong><span>Sponsored</span></div>
@@ -572,17 +732,36 @@ app.innerHTML = `
               <button type="button" data-open-pilot>Start free pilot</button>
             </div>
             <div class="meta-ad__social" aria-hidden="true"><span>Like</span><span>Comment</span><span>Share</span></div>
-          </article>
+            </article>
 
-          <article class="google-ad" data-ad-panel="google" aria-label="Google Search advertisement sample" hidden>
+            <article class="google-ad" data-ad-panel="google" aria-label="Google Search advertisement sample" hidden>
+              <p class="sample-label"><strong>Active-intent preview</strong><span>Responsive Search Ad</span></p>
             <p class="google-ad__sponsored"><strong>Sponsored</strong> <span>hellyeah.ai / sea-pilot</span></p>
             <h3>${audience.googleHeadlines.join(' | ')}</h3>
-            <p>${audience.googleDescription}</p>
+            <p class="google-ad__description">${audience.googleDescription}</p>
             <div class="google-ad__sitelinks">
               <a href="#offer-terms" tabindex="-1"><strong>See pilot terms</strong><span>14 days, one campaign, no card</span></a>
               <a href="#how-it-works" tabindex="-1"><strong>Start a campaign</strong><span>Add your site, goal and customer offer</span></a>
             </div>
-          </article>
+            </article>
+
+            <article class="pmax-plan" data-ad-panel="pmax" aria-label="Performance Max phase two asset-group plan" hidden>
+              <div class="pmax-plan__header">
+                <div><span>GOOGLE ADS / PHASE 2</span><h3>Performance Max asset group</h3></div>
+                <strong>Held until ready</strong>
+              </div>
+              <p class="pmax-plan__intro">PMax assembles combinations from approved assets and distributes them across eligible Google inventory. This is the activation plan, not a misleading single-ad mockup.</p>
+              <div class="pmax-plan__inventory" aria-label="Eligible Google inventory">
+                <span>Search</span><span>YouTube</span><span>Display</span><span>Discover</span><span>Gmail</span><span>Maps</span>
+              </div>
+              <dl class="pmax-plan__details">
+                <div><dt>Primary goal</dt><dd>${audience.channelStory.pmax.goal}</dd></div>
+                <div><dt>Asset theme</dt><dd>${audience.channelStory.pmax.asset}</dd></div>
+                <div><dt>Activation gate</dt><dd>${audience.channelStory.pmax.gate}</dd></div>
+              </dl>
+              <button class="secondary-button" type="button" data-open-pilot>Define my campaign inputs <span aria-hidden="true">&gt;</span></button>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -647,69 +826,75 @@ app.innerHTML = `
         <button class="icon-button" type="button" data-close-pilot aria-label="Close pilot form">x</button>
       </div>
       <ol class="pilot-progress" aria-label="Pilot progress">
-        <li class="is-active" data-progress="1"><span>1</span><small>Signup</small></li>
-        <li data-progress="2"><span>2</span><small>Campaign</small></li>
-        <li data-progress="3"><span>3</span><small>Connect</small></li>
-        <li data-progress="4"><span>4</span><small>Review</small></li>
+        <li class="is-active" data-progress="1"><span>1</span><small>Client</small></li>
+        <li data-progress="2"><span>2</span><small>Spend</small></li>
+        <li data-progress="3"><span>3</span><small>Markets</small></li>
+        <li data-progress="4"><span>4</span><small>KPIs</small></li>
       </ol>
 
       <section class="pilot-step is-active" data-step="1">
-        <p class="pilot-step__eyebrow">Step 1 / Qualification</p>
-        <h3>Create your free pilot</h3>
-        <p>No card. The pilot is designed for teams spending under US$50K per month.</p>
+        <p class="pilot-step__eyebrow">Step 1 / Client</p>
+        <h3>Start with the business</h3>
+        <p>Add the name and the page Hellyeah should use as campaign context. An app store listing is accepted too.</p>
         <div class="form-grid">
-          <label>Full name<input name="name" autocomplete="name" required /></label>
-          <label>Work email<input name="email" type="email" autocomplete="email" required /></label>
-          <label>Country<select name="country" required><option value="">Select country</option><option>Malaysia</option><option>Philippines</option><option>Singapore</option><option>Thailand</option></select></label>
-          <label>Monthly ad spend<select name="spend" required><option value="">Select range</option><option value="under5">Under US$5K</option><option value="5to20">US$5K-US$20K</option><option value="20to50">US$20K-US$50K</option><option value="over50">Above US$50K</option></select></label>
+          <label>Client Name<input name="clientName" autocomplete="organization" placeholder="Business, brand or client name" required /></label>
+          <label>Website or App Link<input name="website" type="url" inputmode="url" placeholder="https://" required /></label>
         </div>
-        <p class="qualification-note" data-qualification-note hidden>Above US$50K? You can continue, and we will route this to a guided evaluation instead of the self-serve pilot.</p>
       </section>
 
       <section class="pilot-step" data-step="2" hidden>
-        <p class="pilot-step__eyebrow">Step 2 / Your campaign</p>
-        <h3>Tell us what you want to promote</h3>
-        <p>Add the site, goal and customer offer. Hellyeah uses them to assemble your first campaign.</p>
+        <p class="pilot-step__eyebrow">Step 2 / Investment</p>
+        <h3>Set the current and target scale</h3>
+        <p>Use total monthly media spend across all channels. This helps Hellyeah shape a realistic first test and a sensible path to scale.</p>
         <div class="form-grid">
-          <label>${audience.businessLabel}<input name="business" autocomplete="organization" required /></label>
-          <label>${audience.websiteLabel}<input name="website" type="url" inputmode="url" placeholder="https://" required /></label>
-          <label class="form-grid__wide">${audience.goalLabel}<select name="goal" required><option value="">Select one</option>${goalOptions}</select></label>
-          <label class="form-grid__wide">What is the customer offer?<textarea name="offer" rows="3" placeholder="What the customer gets, price or incentive, and any limits" required></textarea></label>
+          <label>Current Monthly Spend (All Channels)<select name="currentSpend" required><option value="">Select range</option>${spendOptions}</select></label>
+          <label>Target Monthly Spend (All Channels)<select name="targetSpend" required><option value="">Select range</option>${spendOptions}</select></label>
         </div>
+        <p class="qualification-note" data-qualification-note hidden>Current spend is above the self-serve pilot range. You can still submit the brief; Hellyeah will route it to a guided evaluation before any account connection or launch decision.</p>
       </section>
 
       <section class="pilot-step" data-step="3" hidden>
-        <p class="pilot-step__eyebrow">Step 3 / Ad account</p>
-        <h3>Choose one channel for the pilot</h3>
-        <p>This prototype simulates account selection and never asks for credentials. Production uses the platform's scoped connection flow.</p>
-        <input name="platform" type="hidden" required />
-        <div class="connect-options">
-          <button type="button" data-connect="Meta Ads"><span class="platform-mark platform-mark--meta">M</span><span><strong>Meta Ads</strong><small>Facebook and Instagram campaigns</small></span><b>Connect</b></button>
-          <button type="button" data-connect="Google Ads"><span class="platform-mark platform-mark--google">G</span><span><strong>Google Ads</strong><small>Search campaigns for active demand</small></span><b>Connect</b></button>
-        </div>
-        <p class="connection-status" aria-live="polite">No account selected.</p>
+        <p class="pilot-step__eyebrow">Step 3 / Channels and markets</p>
+        <h3>Show us where the campaign begins</h3>
+        <p>Select every channel currently active and every country the next campaign should target. No ad-account login is requested at this stage.</p>
+        <fieldset class="choice-group" data-required-group="activeChannels">
+          <legend>Active Channels</legend>
+          <div class="choice-grid">${choiceOptions('activeChannels', activeChannels)}</div>
+          <p class="choice-status" aria-live="polite"></p>
+        </fieldset>
+        <fieldset class="choice-group" data-required-group="targetCountries">
+          <legend>Target Countries</legend>
+          <div class="choice-grid">${choiceOptions('targetCountries', targetCountries)}</div>
+          <p class="choice-status" aria-live="polite"></p>
+        </fieldset>
       </section>
 
       <section class="pilot-step" data-step="4" hidden>
-        <p class="pilot-step__eyebrow">Step 4 / Review gate</p>
-        <h3>Your campaign is ready to review</h3>
-        <p>Check the goal, offer, channel and daily cap. Nothing launches without the explicit approval below.</p>
+        <p class="pilot-step__eyebrow">Step 4 / KPIs and review</p>
+        <h3>Define what success must improve</h3>
+        <p>Choose the KPIs that should guide the channel plan, then review the complete pilot brief before submitting it.</p>
+        <fieldset class="choice-group choice-group--compact" data-required-group="campaignKpis">
+          <legend>Campaign KPIs</legend>
+          <div class="choice-grid">${choiceOptions('campaignKpis', audience.kpiOptions)}</div>
+          <p class="choice-status" aria-live="polite"></p>
+        </fieldset>
         <div class="review-summary">
-          <div><span>Business</span><strong data-review="business"></strong></div>
-          <div><span>Country</span><strong data-review="country"></strong></div>
-          <div><span>Goal</span><strong data-review="goal"></strong></div>
-          <div><span>Channel</span><strong data-review="platform"></strong></div>
-          <div><span>Customer offer</span><strong data-review="offer"></strong></div>
-          <label>Daily media budget cap<input name="dailyBudget" type="number" min="5" max="5000" value="50" required /><small>Paid to the ad platform; not included in the free pilot.</small></label>
+          <div><span>Client Name</span><strong data-review="clientName"></strong></div>
+          <div><span>Website or App Link</span><strong data-review="website"></strong></div>
+          <div><span>Current Monthly Spend</span><strong data-review="currentSpend"></strong></div>
+          <div><span>Target Monthly Spend</span><strong data-review="targetSpend"></strong></div>
+          <div class="review-summary__wide"><span>Active Channels</span><strong data-review="activeChannels"></strong></div>
+          <div class="review-summary__wide"><span>Target Countries</span><strong data-review="targetCountries"></strong></div>
+          <div class="review-summary__wide"><span>Campaign KPIs</span><strong data-review="campaignKpis"></strong></div>
         </div>
-        <label class="approval-check"><input name="approval" type="checkbox" required /><span>I have reviewed this draft. Launch only after my explicit approval.</span></label>
+        <label class="approval-check"><input name="approval" type="checkbox" required /><span>I confirm this brief reflects the campaign Hellyeah should prepare. Submitting it does not connect an ad account or launch ads.</span></label>
       </section>
 
       <section class="pilot-success" hidden>
         <span class="success-mark" aria-hidden="true">OK</span>
         <h3>${audience.successTitle}</h3>
-        <p data-success-copy>This interactive prototype completed the launch flow. In production, secure Meta or Google authorization would submit the campaign after your approval.</p>
-        <div class="success-events"><span>Business added</span><span>Channel selected</span><span>Budget approved</span></div>
+        <p data-success-copy>This prototype has captured the inputs Hellyeah would use to prepare the first campaign plan. Account connection and launch approval remain separate steps.</p>
+        <div class="success-events"><span>Client added</span><span>Spend mapped</span><span>Markets selected</span><span>KPIs defined</span></div>
       </section>
 
       <div class="pilot-actions">
@@ -759,7 +944,7 @@ const form = document.querySelector('.pilot-form')
 const nextButton = document.querySelector('[data-next]')
 const backButton = document.querySelector('[data-back]')
 const qualificationNote = document.querySelector('[data-qualification-note]')
-const spendSelect = form.elements.spend
+const spendSelect = form.elements.currentSpend
 let currentStep = 1
 
 const openPilotDialog = () => {
@@ -796,15 +981,20 @@ const showStep = (step) => {
     item.classList.toggle('is-complete', itemStep < step)
   })
   backButton.hidden = step === 1
-  nextButton.innerHTML = step === 4 ? 'Approve &amp; launch <span aria-hidden="true">&gt;</span>' : 'Continue <span aria-hidden="true">&gt;</span>'
+  nextButton.innerHTML = step === 4 ? 'Submit pilot brief <span aria-hidden="true">&gt;</span>' : 'Continue <span aria-hidden="true">&gt;</span>'
 }
 
 const validateStep = (step) => {
-  if (step === 3 && !form.elements.platform.value) {
-    document.querySelector('.connection-status').textContent = 'Select one ad platform to continue.'
-    return false
-  }
   const panel = document.querySelector(`[data-step="${step}"]`)
+  for (const group of panel.querySelectorAll('[data-required-group]')) {
+    const status = group.querySelector('.choice-status')
+    if (!group.querySelector('input:checked')) {
+      status.textContent = 'Select at least one option to continue.'
+      group.querySelector('input').focus()
+      return false
+    }
+    status.textContent = ''
+  }
   const fields = [...panel.querySelectorAll('[required]:not([type="hidden"])')]
   for (const field of fields) {
     if (!field.checkValidity()) {
@@ -818,7 +1008,14 @@ const validateStep = (step) => {
 const fillReview = () => {
   const data = new FormData(form)
   document.querySelectorAll('[data-review]').forEach((item) => {
-    item.textContent = data.get(item.dataset.review) || '-'
+    const name = item.dataset.review
+    const field = form.elements[name]
+    const values = data.getAll(name)
+    if (field instanceof HTMLSelectElement && field.value) {
+      item.textContent = field.selectedOptions[0].textContent
+    } else {
+      item.textContent = values.length ? values.join(', ') : '-'
+    }
   })
 }
 
@@ -827,9 +1024,9 @@ document.querySelectorAll('[data-open-pilot]').forEach((button) => {
     const adPanel = button.closest('[data-ad-panel]')
     const sourceSection = button.closest('section')
     if (adPanel) emitEvent('ad_click', { format: adPanel.dataset.adPanel })
-    emitEvent('signup_started', { source: sourceSection ? sourceSection.className : 'header' })
+    emitEvent('pilot_brief_started', { source: sourceSection ? sourceSection.className : 'header' })
     openPilotDialog()
-    window.setTimeout(() => form.elements.name.focus(), 50)
+    window.setTimeout(() => form.elements.clientName.focus(), 50)
   })
 })
 
@@ -842,20 +1039,13 @@ document.addEventListener('keydown', (event) => {
 })
 
 spendSelect.addEventListener('change', () => {
-  qualificationNote.hidden = spendSelect.value !== 'over50'
+  qualificationNote.hidden = !['50to100', 'over100'].includes(spendSelect.value)
 })
 
-document.querySelectorAll('[data-connect]').forEach((button) => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('[data-connect]').forEach((item) => {
-      item.classList.remove('is-connected')
-      item.querySelector('b').textContent = 'Connect'
-    })
-    button.classList.add('is-connected')
-    button.querySelector('b').textContent = 'Selected'
-    form.elements.platform.value = button.dataset.connect
-    document.querySelector('.connection-status').textContent = `${button.dataset.connect} selected for the prototype pilot.`
-  })
+form.addEventListener('change', (event) => {
+  const group = event.target.closest('[data-required-group]')
+  if (group && group.querySelector('input:checked')) group.querySelector('.choice-status').textContent = ''
+  fillReview()
 })
 
 nextButton.addEventListener('click', () => {
@@ -867,29 +1057,36 @@ nextButton.addEventListener('click', () => {
   if (!validateStep(currentStep)) return
 
   if (currentStep === 1) {
-    emitEvent('signup', { country: form.elements.country.value, spend: form.elements.spend.value })
+    emitEvent('client_profile_added', { clientName: form.elements.clientName.value })
     showStep(2)
   } else if (currentStep === 2) {
-    emitEvent('business_added', { goal: form.elements.goal.value })
+    emitEvent('spend_profile_added', {
+      currentSpend: form.elements.currentSpend.value,
+      targetSpend: form.elements.targetSpend.value,
+    })
     showStep(3)
   } else if (currentStep === 3) {
-    emitEvent('ad_account_connected', { platform: form.elements.platform.value, simulated: true })
+    const data = new FormData(form)
+    emitEvent('channel_market_added', {
+      activeChannels: data.getAll('activeChannels'),
+      targetCountries: data.getAll('targetCountries'),
+    })
     fillReview()
-    emitEvent('campaign_draft_created', { platform: form.elements.platform.value })
     showStep(4)
   } else if (currentStep === 4) {
-    const enterprisePath = form.elements.spend.value === 'over50'
-    emitEvent(enterprisePath ? 'guided_evaluation_requested' : 'campaign_live', {
-      platform: form.elements.platform.value,
-      dailyBudget: form.elements.dailyBudget.value,
-      simulated: true,
+    const enterprisePath = ['50to100', 'over100'].includes(form.elements.currentSpend.value)
+    const data = new FormData(form)
+    emitEvent(enterprisePath ? 'guided_evaluation_requested' : 'pilot_brief_submitted', {
+      activeChannels: data.getAll('activeChannels'),
+      targetCountries: data.getAll('targetCountries'),
+      campaignKpis: data.getAll('campaignKpis'),
     })
     document.querySelectorAll('.pilot-step, .pilot-progress').forEach((item) => { item.hidden = true })
     document.querySelector('.pilot-success').hidden = false
     document.querySelector('.pilot-success').classList.add('is-active')
-    document.querySelector('[data-success-copy]').innerHTML = enterprisePath
-      ? 'Your spend level is above the self-serve pilot limit, so the next step is a guided evaluation before account connection or launch.'
-      : 'This interactive prototype completed the launch flow. In production, secure Meta or Google authorization would submit the campaign after your approval.'
+    document.querySelector('[data-success-copy]').textContent = enterprisePath
+      ? 'Your pilot brief is complete. Because current spend is above the self-serve range, the next step is a guided evaluation before account connection or launch.'
+      : 'This prototype has captured the inputs Hellyeah would use to prepare the first campaign plan. Account connection and launch approval remain separate steps.'
     backButton.hidden = true
     nextButton.textContent = 'Close'
     nextButton.dataset.complete = 'true'
@@ -911,11 +1108,7 @@ dialog.addEventListener('close', () => {
   document.querySelector('.pilot-success').hidden = true
   document.querySelector('.pilot-success').classList.remove('is-active')
   document.querySelector('.pilot-progress').hidden = false
-  document.querySelectorAll('[data-connect]').forEach((item) => {
-    item.classList.remove('is-connected')
-    item.querySelector('b').textContent = 'Connect'
-  })
-  document.querySelector('.connection-status').textContent = 'No account selected.'
+  document.querySelectorAll('.choice-status').forEach((item) => { item.textContent = '' })
   qualificationNote.hidden = true
   showStep(1)
 })

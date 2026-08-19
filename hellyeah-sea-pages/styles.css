@@ -104,7 +104,7 @@ ul {
   inset: 0 0 auto;
   z-index: 50;
   display: grid;
-  grid-template-columns: minmax(170px, 1fr) auto minmax(170px, 1fr);
+  grid-template-columns: minmax(170px, 1fr) auto;
   align-items: center;
   min-height: 64px;
   padding: 8px max(24px, calc((100vw - var(--shell)) / 2));
@@ -139,35 +139,6 @@ ul {
 .brand__name {
   font-size: 1rem;
   font-weight: 750;
-}
-
-.audience-nav {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  padding: 3px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: 5px;
-}
-
-.audience-nav__item {
-  min-width: 84px;
-  padding: 8px 12px;
-  color: rgba(255, 255, 255, 0.68);
-  border-radius: 3px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.audience-nav__item:hover {
-  color: var(--white);
-}
-
-.audience-nav__item.is-active {
-  color: var(--ink);
-  background: var(--white);
 }
 
 .header-cta {
@@ -1897,21 +1868,8 @@ textarea:focus {
 
 @media (max-width: 1050px) {
   .site-header {
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 18px;
-  }
-
-  .brand__name {
-    display: none;
-  }
-
-  .audience-nav {
-    justify-self: center;
-  }
-
-  .audience-nav__item {
-    min-width: 72px;
-    padding-inline: 8px;
   }
 
   .hero__promise {
@@ -1980,31 +1938,16 @@ textarea:focus {
 
   .site-header {
     position: absolute;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
     min-height: 58px;
     padding: 8px 16px;
   }
 
   .header-cta {
-    display: none;
-  }
-
-  .audience-nav {
-    justify-self: stretch;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .audience-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .audience-nav__item {
-    flex: 1 0 68px;
-    min-width: 68px;
-    padding-inline: 6px;
-    font-size: 0.64rem;
+    min-height: 36px;
+    padding-inline: 12px;
+    font-size: 0.68rem;
   }
 
   .hero,

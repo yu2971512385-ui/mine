@@ -481,10 +481,6 @@ const audienceKey = document.body.dataset.audience
 const audience = audiences[audienceKey] || audiences.founders
 const app = document.querySelector('#app')
 
-const navItems = Object.entries(audiences).map(([key, item]) => `
-  <a href="${item.href}" class="audience-nav__item ${key === audienceKey ? 'is-active' : ''}" ${key === audienceKey ? 'aria-current="page"' : ''}>${item.shortLabel}</a>
-`).join('')
-
 const planRows = Object.entries(audience.plan).filter(([key]) => key !== 'name' && key !== 'status').map(([key, value]) => `
   <div class="plan-row"><span>${key}</span><strong>${value}</strong></div>
 `).join('')
@@ -562,8 +558,7 @@ app.innerHTML = `
       <span class="brand__mark" aria-hidden="true">H!</span>
       <span class="brand__name">Hellyeah</span>
     </a>
-    <nav class="audience-nav" aria-label="Audience landing pages">${navItems}</nav>
-    <button class="header-cta" type="button" data-open-pilot>${audience.cta}</button>
+    <button class="header-cta" type="button" data-open-pilot>Start free pilot</button>
   </header>
 
   <main id="top">

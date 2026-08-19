@@ -50,6 +50,45 @@ const audiences = {
     goalOptions: ['Qualified leads', 'Online sales', 'Store visits', 'Bookings or reservations'],
     nextLabel: 'Start my first campaign',
     successTitle: 'Your first campaign is ready.',
+    cta: 'Build my first campaign',
+    finalTitle: 'Your first campaign should not have to wait for a marketing hire.',
+    finalCopy: 'Bring your website and the offer you want to promote. Leave with a campaign you can understand, control and choose to launch.',
+    heroNote: '$0 today. No card. No agency handoff. You approve every dollar before launch.',
+    recognitionKicker: 'When marketing keeps falling back to you',
+    recognitionTitle: 'You know the business. You should not need to become a media buyer to advertise it.',
+    recognitionCopy: 'The problem is rarely a lack of ideas. It is finding uninterrupted time to turn an offer into the right audience, ads, budget and settings - while customers and operations still need you.',
+    tensions: [
+      ['Pain', 'Ads Manager asks ad-tech questions before it understands your business.', 'You end up comparing objectives, audiences and bidding options when all you wanted was more enquiries or sales.'],
+      ['Desire', 'You want something useful running this week, not another marketing project.', 'The campaign needs to move forward between customer calls, supplier issues and the rest of the business.'],
+      ['Need', 'You need help with the setup without handing over the keys.', 'You should see the message, audience and daily cap clearly before any money can be spent.'],
+    ],
+    advantagesTitle: 'Hellyeah turns what you already know into the campaign you have not had time to build.',
+    advantagesCopy: 'Start with your website and business goal. Hellyeah handles the research, campaign structure and first-draft ad copy, then puts the important decisions back in front of you.',
+    advantages: [
+      ['Your website becomes the brief', 'Hellyeah uses your offer, customer and goal as the starting point - not a blank campaign setup screen.', 'Less translating your business into ad-platform language.'],
+      ['The starting channel is explained', 'See whether Meta should create demand or Google should capture active intent for this first campaign.', 'A channel decision you can understand and change.'],
+      ['Audience, ads and budget stay together', 'Review the people you will reach, what they will see and the daily limit in one place.', 'No surprise message or disconnected spend.'],
+      ['Nothing launches behind your back', 'Connecting an account does not equal approval. The campaign waits for your explicit go-ahead.', 'AI speed with owner control.'],
+    ],
+    transformationTitle: 'Spend less time setting up marketing. Spend more time deciding what is worth promoting.',
+    transformation: [
+      ['Starting point', 'A blank ad account and dozens of settings', 'Your website, customer offer and business goal'],
+      ['Campaign work', 'Research, structure and copy squeezed into spare hours', 'A complete first draft assembled by Hellyeah'],
+      ['Budget confidence', 'Spend entered in one screen, message reviewed somewhere else', 'Audience, ads and daily cap reviewed together'],
+      ['Launch decision', 'Unclear what is ready or who can publish', 'One visible approval before the campaign starts'],
+    ],
+    pilotOutcomes: [
+      ['One business added', 'Bring the website and the offer you want customers to act on.'],
+      ['One campaign ready', 'Review the audience, first-draft ads, channel and budget cap.'],
+      ['One controlled launch', 'Connect one Meta or Google account and approve only when ready.'],
+    ],
+    faq: [
+      ['I have never run ads before. Is this still for me?', 'Yes. Hellyeah starts with plain business inputs - what you sell, who should buy and what result you want - then guides you through the campaign choices.'],
+      ['What if I do not know whether to use Meta or Google?', 'That is part of the first campaign decision. Hellyeah recommends a starting channel based on whether you need to create demand or capture people already searching, and you make the final choice.'],
+      ['Will AI spend money or launch without me?', 'No. Account connection, budget review and launch approval are separate steps. The campaign cannot start from this flow until you explicitly approve it.'],
+      ['Do I need finished ads or professional creative?', 'Bring your website and customer offer. Hellyeah prepares the first-draft message and creative direction so you have something concrete to review instead of starting from a blank page.'],
+      ['What exactly is included in the free pilot?', 'One workspace, one launch-ready campaign and one connected Meta or Google Ads account for 14 days. Media spend is paid separately to the ad platform.'],
+    ],
   },
   ecommerce: {
     label: 'Ecommerce operator',
@@ -102,6 +141,45 @@ const audiences = {
     goalOptions: ['Hero product', 'New collection', 'Starter bundle', 'Seasonal offer'],
     nextLabel: 'Start my product campaign',
     successTitle: 'Your product campaign is ready.',
+    cta: 'Launch my product campaign',
+    finalTitle: 'The product is ready. Give its first sales campaign the same momentum.',
+    finalCopy: 'Choose the SKU and offer. Hellyeah will help turn them into a focused campaign while the launch window is still open.',
+    heroNote: '$0 today. No card. One store, one product campaign and one budget you control.',
+    recognitionKicker: 'When the product is ready but the campaign is not',
+    recognitionTitle: 'Your next sales opportunity should not wait for another round of ad setup.',
+    recognitionCopy: 'You already know the product, price, margin and offer. The slow part is turning those facts into a focused audience, channel, creative angle and budget before the launch window moves on.',
+    tensions: [
+      ['Pain', 'A simple product test becomes forty settings and five disconnected decisions.', 'Product, audience, creative and budget drift apart as the campaign passes between tools and tabs.'],
+      ['Desire', 'You want to know whether this SKU can acquire customers before the next drop.', 'The first test needs to launch while the offer, inventory and merchandising moment still make sense.'],
+      ['Need', 'You need speed without losing sight of margin or spend.', 'The customer offer and daily cap must stay visible before the campaign starts buying traffic.'],
+    ],
+    advantagesTitle: 'Hellyeah builds the first campaign around the product economics, not just the ad creative.',
+    advantagesCopy: 'Choose one hero product or bundle. Hellyeah turns its page, offer and goal into a focused acquisition campaign for Meta or Google, ready for an operator to check.',
+    advantages: [
+      ['One product stays the focus', 'Anchor the first test to a clear SKU, bundle or collection instead of spreading spend across the store.', 'A cleaner answer to what is actually selling.'],
+      ['Channel follows buying intent', 'Use Meta to introduce the offer or Google to capture shoppers already looking for it.', 'A clear job for the first channel.'],
+      ['Creative starts from the offer', 'First-draft messaging connects the product benefit, customer incentive and conversion goal.', 'Ads that match the landing page and promotion.'],
+      ['Margin and budget stay visible', 'Review the offer beside the daily media cap before approval.', 'Faster launch without forgetting unit economics.'],
+    ],
+    transformationTitle: 'Move from “we should advertise this” to a controlled product test you can actually learn from.',
+    transformation: [
+      ['Starting point', 'A full catalog and no clear first test', 'One product, one offer and one conversion goal'],
+      ['Campaign work', 'Product data, copy and targeting rebuilt across tools', 'A focused campaign assembled from the store context'],
+      ['Commercial control', 'Promotion and media budget reviewed separately', 'Offer, audience and daily cap reviewed together'],
+      ['Launch decision', 'Campaign misses the drop or seasonal window', 'A launch-ready test while the product moment is current'],
+    ],
+    pilotOutcomes: [
+      ['One product selected', 'Use a hero SKU, starter bundle, collection or seasonal offer.'],
+      ['One sales campaign ready', 'Review its audience, ad message, channel and daily cap.'],
+      ['One measurable test started', 'Connect one account and launch after your commercial check.'],
+    ],
+    faq: [
+      ['Does Hellyeah replace my ecommerce platform?', 'No. Your store remains the source of product and conversion context. Hellyeah helps turn that context into a Meta or Google campaign.'],
+      ['What if I have hundreds of products?', 'The pilot deliberately starts with one hero product, bundle, collection or offer. That keeps the first acquisition question and budget focused.'],
+      ['Will it ignore my margin and discount limits?', 'No. The customer offer and daily budget cap are part of the review before launch. You can change either before approving the campaign.'],
+      ['Should I start with Meta or Google?', 'It depends on how shoppers discover the product. Hellyeah frames the choice around demand creation versus active search intent, then you select the first channel.'],
+      ['What exactly is included in the free pilot?', 'One store workspace, one launch-ready product campaign and one connected Meta or Google Ads account for 14 days. Media spend is not included.'],
+    ],
   },
   marketers: {
     label: 'In-house marketer',
@@ -154,6 +232,45 @@ const audiences = {
     goalOptions: ['New campaign launch', 'Cross-channel test', 'Lead generation', 'Market expansion'],
     nextLabel: 'Start my team campaign',
     successTitle: 'Your team campaign is ready.',
+    cta: 'Turn my brief into a campaign',
+    finalTitle: 'Stop letting campaign setup consume the week after the brief is approved.',
+    finalCopy: 'Use one real brief to see how much faster your team can move from intent to an accountable launch decision.',
+    heroNote: '$0 today. No card. One workspace, one campaign and final approval stays in-house.',
+    recognitionKicker: 'When an approved brief still takes a week to launch',
+    recognitionTitle: 'Your team does not need more campaign ideas. It needs the setup work to stop blocking them.',
+    recognitionCopy: 'Research, targeting, first-draft copy, account setup and stakeholder review are individually manageable. Put together, they turn every launch into a queue - and the marketer becomes the human connection between five different tools.',
+    tensions: [
+      ['Pain', 'The brief is approved, but the campaign still has to be rebuilt inside the ad platform.', 'Strategic decisions get translated again into objectives, audiences, copy, naming, budget and tracking details.'],
+      ['Desire', 'You want campaign throughput without lowering the quality bar.', 'The team should spend its time on the offer, message and experiment - not repetitive setup.'],
+      ['Need', 'Brand, finance and leadership need a review they can actually understand.', 'The audience, ads, rationale and cap must be visible before final approval.'],
+    ],
+    advantagesTitle: 'Hellyeah closes the gap between an approved brief and an approved campaign.',
+    advantagesCopy: 'Hellyeah handles the research, structure and first-draft copy in one workspace. Your team keeps the business context, review trail, budget authority and final launch decision.',
+    advantages: [
+      ['Brief becomes campaign structure', 'Translate the goal, market, offer and constraints directly into audience, channel and measurement choices.', 'Less re-entry and fewer interpretation gaps.'],
+      ['First draft arrives together', 'Review campaign structure and ad copy as one system rather than separate documents.', 'A faster route to useful stakeholder feedback.'],
+      ['Rationale stays attached', 'Keep the reason for the channel, audience and budget visible beside the decision.', 'Reviews focus on tradeoffs, not missing context.'],
+      ['Approval remains an explicit gate', 'A connected account is scoped for setup; launch still waits for the named owner.', 'More throughput without a governance black box.'],
+    ],
+    transformationTitle: 'Turn launch work from a chain of handoffs into one reviewable operating flow.',
+    transformation: [
+      ['Starting point', 'Approved brief waiting in a document or ticket', 'Goal, offer and constraints entered once'],
+      ['Campaign work', 'Research, setup and copy rebuilt across people and tools', 'One AI-assisted first draft in the campaign workspace'],
+      ['Stakeholder review', 'Decks, screenshots and ad-platform links tell different stories', 'Audience, ads, rationale and cap reviewed together'],
+      ['Launch decision', 'Approval intent buried in chat or email', 'One named, visible authorization before launch'],
+    ],
+    pilotOutcomes: [
+      ['One brief operationalized', 'Use a real upcoming campaign, not a generic sandbox exercise.'],
+      ['One team review completed', 'Check the audience, copy, rationale, channel and cap together.'],
+      ['One approved campaign ready', 'Connect one account and preserve final launch authority.'],
+    ],
+    faq: [
+      ['Is this another AI copy generator?', 'No. First-draft copy is one part of the workflow. Hellyeah also structures the audience, channel, budget and approval path needed to move toward launch.'],
+      ['How do we keep brand and finance in control?', 'The message, rationale and daily cap are visible before launch, and account connection does not bypass the explicit approval step.'],
+      ['Will this replace our existing Meta or Google accounts?', 'No. The pilot connects one existing account through a scoped platform flow. Hellyeah adds a campaign planning and launch layer around it.'],
+      ['Can we use it for a real upcoming campaign?', 'That is the intended pilot. Choose one campaign brief with a clear owner, offer and objective so the team can evaluate the full workflow.'],
+      ['What exactly is included in the free pilot?', 'One team workspace, one launch-ready campaign and one connected Meta or Google Ads account for 14 days. Media spend is not included.'],
+    ],
   },
   agencies: {
     label: 'Small agency',
@@ -206,6 +323,45 @@ const audiences = {
     goalOptions: ['New client launch', 'Campaign refresh', 'Lead generation', 'Cross-channel plan'],
     nextLabel: 'Start my client campaign',
     successTitle: 'Your client campaign is ready.',
+    cta: 'Build my next client campaign',
+    finalTitle: 'Let the next signed brief become a campaign before it becomes another queue.',
+    finalCopy: 'Test Hellyeah on one real client assignment and keep agency judgment and client approval exactly where they belong.',
+    heroNote: '$0 today. No card. One client workspace with agency and client approval before launch.',
+    recognitionKicker: 'When every new client creates the same setup work again',
+    recognitionTitle: 'Your margin should come from good media decisions, not disappear into repetitive campaign assembly.',
+    recognitionCopy: 'A signed brief is only the beginning. Someone still has to translate it into audience, copy, structure and budget, package it for review, chase approval and rebuild the final version in the ad account.',
+    tensions: [
+      ['Pain', 'Senior media time gets consumed by work that starts from the same blank screens.', 'Research, setup, copy scaffolding and client-ready formatting compete with optimization and strategy.'],
+      ['Desire', 'You want to take on more delivery without making the work feel generic.', 'The first draft should arrive faster while assumptions and decisions remain visible to the team.'],
+      ['Need', 'The client must understand what they are approving.', 'Audience, ads, budget and launch status need one shared view - not another trail of attachments.'],
+    ],
+    advantagesTitle: 'Hellyeah adds campaign capacity while keeping the agency accountable for the decisions.',
+    advantagesCopy: 'Turn one real client brief into a launch-ready Meta or Google campaign. Hellyeah accelerates the repetitive layer; your team refines the strategy and the client still approves the work.',
+    advantages: [
+      ['Brief becomes a working campaign', 'Translate the client goal, offer and budget into audience, channel and first-draft copy.', 'Less production time before senior review.'],
+      ['The work stays client-readable', 'Keep assumptions, message, daily cap and launch status in one workspace.', 'Fewer screenshots and fewer approval misunderstandings.'],
+      ['Agency and client approvals are distinct', 'Your team reviews the first draft before the client sees the final launch decision.', 'Speed without collapsing accountability.'],
+      ['One scoped account connection', 'Prepare the first campaign without widening access beyond the chosen client account.', 'A cleaner first engagement and handoff.'],
+    ],
+    transformationTitle: 'Protect delivery quality and margin by removing the rebuild between brief, review and launch.',
+    transformation: [
+      ['Starting point', 'Signed brief enters another internal setup queue', 'One client goal, offer and budget enter the workspace'],
+      ['Campaign work', 'Senior time spent on repetitive scaffolding', 'AI-assisted first draft ready for agency refinement'],
+      ['Client review', 'Copy, budget and targeting scattered across files', 'One readable campaign with a clear approval status'],
+      ['Launch decision', 'Approval chased across email and chat', 'Agency review, then client approval, then launch'],
+    ],
+    pilotOutcomes: [
+      ['One client brief added', 'Use a real launch, refresh, lead-gen or cross-channel assignment.'],
+      ['One client-ready campaign built', 'Review the audience, first-draft copy, channel and cap.'],
+      ['One two-stage approval tested', 'Agency first, client second, launch only when both are ready.'],
+    ],
+    faq: [
+      ['Will this make our work look generic to the client?', 'The first draft is a starting point, not a locked template. Your team can refine the audience, message and budget while keeping the rationale visible.'],
+      ['Does the client get launch authority immediately?', 'No. The workflow separates agency review from client approval. Account connection also remains distinct from the final launch action.'],
+      ['Are we giving Hellyeah access to every client account?', 'The pilot is limited to one selected Meta or Google account. Production connection should use the platform scoped authorization flow.'],
+      ['Where does the agency still add value?', 'In the decisions that matter: client context, strategic tradeoffs, creative judgment, budget recommendation and performance interpretation. Hellyeah accelerates repetitive assembly.'],
+      ['What exactly is included in the free pilot?', 'One client workspace, one launch-ready campaign and one connected Meta or Google Ads account for 14 days. Media spend is not included.'],
+    ],
   },
 }
 
@@ -229,6 +385,41 @@ const painRows = audience.pains.map(([title, copy], index) => `
   </article>
 `).join('')
 
+const tensionRows = audience.tensions.map(([label, title, copy], index) => `
+  <article class="tension-row reveal">
+    <div><span>0${index + 1}</span><small>${label}</small></div>
+    <h3>${title}</h3>
+    <p>${copy}</p>
+  </article>
+`).join('')
+
+const advantageRows = audience.advantages.map(([title, copy, result], index) => `
+  <article class="advantage-row reveal">
+    <span class="advantage-row__number">0${index + 1}</span>
+    <div><h3>${title}</h3><p>${copy}</p></div>
+    <strong>${result}</strong>
+  </article>
+`).join('')
+
+const transformationRows = audience.transformation.map(([area, before, after]) => `
+  <div class="transformation-row reveal">
+    <strong>${area}</strong>
+    <p>${before}</p>
+    <p>${after}</p>
+  </div>
+`).join('')
+
+const pilotOutcomeRows = audience.pilotOutcomes.map(([title, copy], index) => `
+  <article class="pilot-outcome reveal">
+    <span>0${index + 1}</span>
+    <div><h3>${title}</h3><p>${copy}</p></div>
+  </article>
+`).join('')
+
+const faqRows = audience.faq.map(([question, answer], index) => `
+  <details ${index === 0 ? 'open' : ''}><summary>${question}</summary><p>${answer}</p></details>
+`).join('')
+
 const funnelSteps = audience.funnel.map(([title, event, detail], index) => `
   <li class="funnel-step reveal" data-event="${event}">
     <span class="funnel-step__number">${String(index + 1).padStart(2, '0')}</span>
@@ -245,7 +436,7 @@ app.innerHTML = `
       <span class="brand__name">Hellyeah</span>
     </a>
     <nav class="audience-nav" aria-label="Audience landing pages">${navItems}</nav>
-    <button class="header-cta" type="button" data-open-pilot>Start free pilot</button>
+    <button class="header-cta" type="button" data-open-pilot>${audience.cta}</button>
   </header>
 
   <main id="top">
@@ -258,10 +449,10 @@ app.innerHTML = `
         <p class="hero__promise">${audience.hero}</p>
         <p class="hero__copy">${audience.intro}</p>
         <div class="hero__actions">
-          <button class="primary-button" type="button" data-open-pilot>Start free 14-day pilot <span aria-hidden="true">&gt;</span></button>
+          <button class="primary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
           <a class="text-button" href="#how-it-works">See how it works</a>
         </div>
-        <p class="hero__note">$0 today. No card. Built for teams spending under US$50K/month.</p>
+        <p class="hero__note">${audience.heroNote}</p>
       </div>
     </section>
 
@@ -275,13 +466,24 @@ app.innerHTML = `
       </div>
     </section>
 
+    <section class="recognition section">
+      <div class="shell recognition__layout">
+        <div class="section-copy reveal">
+          <p class="kicker kicker--dark">${audience.recognitionKicker}</p>
+          <h2>${audience.recognitionTitle}</h2>
+          <p>${audience.recognitionCopy}</p>
+        </div>
+        <div class="tension-list">${tensionRows}</div>
+      </div>
+    </section>
+
     <section class="outcome section" id="how-it-works">
       <div class="shell outcome__layout">
         <div class="section-copy reveal">
           <p class="kicker kicker--dark">${audience.offerLine}</p>
           <h2>${audience.outcomeTitle}</h2>
           <p>${audience.outcomeCopy}</p>
-          <button class="secondary-button" type="button" data-open-pilot>Start my first campaign <span aria-hidden="true">&gt;</span></button>
+          <button class="secondary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
         </div>
         <div class="product-preview reveal" aria-label="Launch-ready campaign preview">
           <div class="product-preview__top">
@@ -301,6 +503,24 @@ app.innerHTML = `
       </div>
     </section>
 
+    <section class="advantages section">
+      <div class="shell">
+        <div class="advantages__intro reveal">
+          <div>
+            <p class="kicker kicker--dark">Why Hellyeah</p>
+            <h2>${audience.advantagesTitle}</h2>
+          </div>
+          <p>${audience.advantagesCopy}</p>
+        </div>
+        <div class="advantage-list">${advantageRows}</div>
+        <div class="product-definition reveal">
+          <strong>Not another creative-only AI tool.</strong>
+          <p>Hellyeah connects research, campaign structure, first-draft copy, budget review, account connection and explicit launch approval in one path.</p>
+          <span>Business goal <b>&gt;</b> campaign ready <b>&gt;</b> approved launch</span>
+        </div>
+      </div>
+    </section>
+
     <section class="controls section">
       <div class="shell">
         <div class="section-heading reveal">
@@ -308,6 +528,19 @@ app.innerHTML = `
           <h2>AI handles the setup.<br />You choose the goal, budget and launch.</h2>
         </div>
         <div class="control-list">${painRows}</div>
+      </div>
+    </section>
+
+    <section class="transformation section">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="kicker kicker--dark">What changes with Hellyeah</p>
+          <h2>${audience.transformationTitle}</h2>
+        </div>
+        <div class="transformation-table">
+          <div class="transformation-head" aria-hidden="true"><span></span><strong>Without Hellyeah</strong><strong>With Hellyeah</strong></div>
+          ${transformationRows}
+        </div>
       </div>
     </section>
 
@@ -365,26 +598,35 @@ app.innerHTML = `
       </div>
     </section>
 
+    <section class="pilot-value section">
+      <div class="shell pilot-value__layout">
+        <div class="pilot-value__offer reveal">
+          <p class="kicker">The 14-day pilot</p>
+          <h2>Do the real work once.<br />Decide from the result.</h2>
+          <p>Use one real business, product, team brief or client assignment. Take it through the campaign flow and judge Hellyeah by the work you can actually review.</p>
+          <div class="pilot-value__terms"><strong>$0 today</strong><span>No card</span><span>Media spend excluded</span><span>Under US$50K/month</span></div>
+          <button class="primary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
+        </div>
+        <div class="pilot-outcomes">${pilotOutcomeRows}</div>
+      </div>
+    </section>
+
     <section class="faq section">
       <div class="shell faq__layout">
         <div class="section-heading reveal">
           <p class="kicker kicker--dark">Before you start</p>
           <h2>Clear terms.<br />No surprise launch.</h2>
         </div>
-        <div class="faq-list reveal">
-          <details open><summary>What exactly is free?</summary><p>The 14-day pilot includes one workspace, one launch-ready campaign and one connected Meta or Google Ads account. Media spend is not included.</p></details>
-          <details><summary>Can Hellyeah launch without me?</summary><p>No. Connecting an account is separate from approval. The first campaign stays in draft until the named owner approves the audience, message and budget.</p></details>
-          <details><summary>Who is the pilot for?</summary><p>New teams in Malaysia, the Philippines, Singapore or Thailand with monthly ad spend below US$50K. Teams above that level are routed to a guided evaluation.</p></details>
-          <details><summary>Which channel can I use?</summary><p>Choose one Meta or Google Ads account for the pilot. The plan recommends a starting channel based on your goal, but you approve the final choice.</p></details>
-        </div>
+        <div class="faq-list reveal">${faqRows}</div>
       </div>
     </section>
 
     <section class="final-cta">
       <div class="shell final-cta__inner reveal">
         <p class="kicker">Malaysia / Philippines / Singapore / Thailand</p>
-        <h2>Add your goal.<br />Review the campaign. Start marketing.</h2>
-        <button class="primary-button" type="button" data-open-pilot>Start free 14-day pilot <span aria-hidden="true">&gt;</span></button>
+        <h2>${audience.finalTitle}</h2>
+        <p class="final-cta__copy">${audience.finalCopy}</p>
+        <button class="primary-button" type="button" data-open-pilot>${audience.cta} <span aria-hidden="true">&gt;</span></button>
         <p>$0 today. No card. Media spend not included.</p>
       </div>
     </section>
@@ -511,21 +753,6 @@ document.querySelectorAll('[data-ad-tab]').forEach((tab) => {
     })
   })
 })
-
-const revealItems = document.querySelectorAll('.reveal')
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return
-      entry.target.classList.add('is-visible')
-      observer.unobserve(entry.target)
-    })
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px' })
-
-  revealItems.forEach((item) => revealObserver.observe(item))
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'))
-}
 
 const dialog = document.querySelector('.pilot-dialog')
 const form = document.querySelector('.pilot-form')

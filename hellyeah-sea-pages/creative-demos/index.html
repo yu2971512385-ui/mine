@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Hellyeah creative demos for four SEA audience landing pages." />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="icon" href="data:," />
+    <title>Hellyeah Creative Demo Kit</title>
+    <style>
+      :root {
+        --ink: #11130f;
+        --paper: #f4f5f1;
+        --white: #ffffff;
+        --muted: #64675f;
+        --line: #cfd1ca;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 0;
+      }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      .shell { width: min(1240px, calc(100% - 40px)); margin-inline: auto; }
+      header { color: var(--white); background: var(--ink); }
+      .header-inner { display: flex; justify-content: space-between; align-items: center; min-height: 68px; }
+      .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; }
+      .mark { display: grid; place-items: center; width: 36px; height: 36px; background: #ff5b3f; border-radius: 4px; }
+      .header-inner span:last-child { color: rgba(255,255,255,.68); font-size: 13px; }
+      .intro { padding: 76px 0 62px; border-bottom: 1px solid var(--line); }
+      .eyebrow { color: #ff5b3f; font-size: 13px; font-weight: 900; text-transform: uppercase; }
+      h1 { max-width: 900px; margin: 14px 0 0; font-size: 58px; line-height: 1.04; }
+      .intro p:last-child { max-width: 760px; margin: 22px 0 0; color: var(--muted); font-size: 18px; line-height: 1.55; }
+      .audience-section { padding: 76px 0; border-bottom: 1px solid var(--line); }
+      .audience-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: end; }
+      .audience-heading h2 { margin: 8px 0 0; font-size: 38px; line-height: 1.08; }
+      .audience-heading p { margin: 0; color: var(--muted); line-height: 1.55; }
+      .asset-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; align-items: start; margin-top: 38px; }
+      figure { margin: 0; }
+      figure.feed { grid-column: span 4; }
+      figure.story { grid-column: span 3; }
+      figure.pmax { grid-column: span 5; }
+      .asset-frame { overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: 5px; }
+      .asset-frame img { width: 100%; height: auto; }
+      figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; color: var(--muted); font-size: 12px; }
+      figcaption a { color: var(--ink); font-weight: 800; }
+      .copy-block { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; margin-top: 34px; background: var(--line); border: 1px solid var(--line); }
+      .copy-block > div { padding: 18px; background: var(--white); }
+      .copy-block span { display: block; color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+      .copy-block p { margin: 7px 0 0; font-size: 14px; line-height: 1.5; }
+      footer { padding: 30px 0 46px; color: var(--muted); font-size: 12px; }
+      @media (max-width: 850px) {
+        h1 { font-size: 42px; }
+        .audience-heading { grid-template-columns: 1fr; gap: 18px; }
+        figure.feed, figure.story, figure.pmax { grid-column: span 12; }
+        figure.story { width: min(100%, 420px); }
+        .copy-block { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 520px) {
+        .header-inner span:last-child { display: none; }
+        .intro { padding: 54px 0 46px; }
+        h1 { font-size: 34px; }
+        .audience-section { padding: 54px 0; }
+        .audience-heading h2 { font-size: 30px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell header-inner">
+        <a class="brand" href="../"><b class="mark">H!</b> Hellyeah</a>
+        <span>Creative demo kit / SEA pilot</span>
+      </div>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="shell">
+          <span class="eyebrow">12 production-size demos</span>
+          <h1>One audience promise, adapted to the placement.</h1>
+          <p>Each landing page has its own hook, offer framing and CTA. Feed, Story/Reels and Google/PMax assets preserve the same message while respecting the shape and reading pattern of the placement.</p>
+        </div>
+      </section>
+      <div id="gallery"></div>
+    </main>
+    <footer><div class="shell">Prototype creative for review. Photo credits follow the source landing pages. Media spend is not included in the free pilot.</div></footer>
+    <script>
+      const sets = [
+        {
+          id: 'founders', label: 'Owner-led businesses', accent: '#ff5b3f',
+          title: 'Skip the Ads Manager learning curve.',
+          rationale: 'Lead with relief and control: the owner supplies the business context, Hellyeah prepares the campaign, and nothing launches without approval.',
+          primary: 'You know the business. You should not need to become a media buyer to advertise it. Add your website and goal, then review the audience, ads and budget before launch.',
+          headline: 'Start your first campaign free for 14 days.',
+          cta: 'Build my first campaign',
+        },
+        {
+          id: 'ecommerce', label: 'Ecommerce operators', accent: '#4a67ff',
+          title: 'Turn product readiness into campaign momentum.',
+          rationale: 'The visual connects a real product operation to one focused acquisition test, keeping the offer, margin and launch speed in view.',
+          primary: 'The product is ready. The sales campaign should be too. Pick one product and let Hellyeah turn its page, offer and revenue goal into ads you can review.',
+          headline: 'Launch one product campaign free for 14 days.',
+          cta: 'Launch my product campaign',
+        },
+        {
+          id: 'marketers', label: 'In-house marketers', accent: '#00a786',
+          title: 'Make the setup delay feel avoidable.',
+          rationale: 'The hook begins after approval, where lean teams feel the bottleneck most. The offer promises faster assembly without weakening brand, budget or launch governance.',
+          primary: 'The brief is approved. Why is campaign setup still taking a week? Hellyeah prepares the audience, first-draft ads and budget while your team keeps final approval.',
+          headline: 'Go from approved brief to campaign today.',
+          cta: 'Turn my brief into a campaign',
+        },
+        {
+          id: 'agencies', label: 'Small agencies', accent: '#e2882d',
+          title: 'Frame campaign assembly as a margin problem.',
+          rationale: 'The creative names the repeated setup queue and answers it with a client-safe workflow: AI-assisted first draft, agency review, then client approval.',
+          primary: 'A signed brief should lead to a campaign, not another setup queue. Build the first draft faster, refine it with your team and keep client approval visible.',
+          headline: 'Add campaign capacity without losing client control.',
+          cta: 'Build my next client campaign',
+        },
+      ]
+
+      const formats = [
+        ['feed', 'Meta Feed', '1080 × 1080'],
+        ['story', 'Stories / Reels', '1080 × 1920'],
+        ['pmax', 'Google / PMax', '1200 × 628'],
+      ]
+
+      document.querySelector('#gallery').innerHTML = sets.map((set) => `
+        <section class="audience-section" id="${set.id}">
+          <div class="shell">
+            <div class="audience-heading">
+              <div><span class="eyebrow" style="color:${set.accent}">${set.label}</span><h2>${set.title}</h2></div>
+              <p>${set.rationale}</p>
+            </div>
+            <div class="asset-grid">
+              ${formats.map(([format, label, size]) => `
+                <figure class="${format}">
+                  <a class="asset-frame" href="./${set.id}-${format}.png" target="_blank" rel="noopener"><img src="./${set.id}-${format}.png" alt="${set.label} ${label} creative demo" loading="lazy" /></a>
+                  <figcaption><span>${label} / ${size}</span><a href="./${set.id}-${format}.png" download>Download PNG</a></figcaption>
+                </figure>
+              `).join('')}
+            </div>
+            <div class="copy-block">
+              <div><span>Primary text</span><p>${set.primary}</p></div>
+              <div><span>Headline</span><p>${set.headline}</p></div>
+              <div><span>CTA</span><p>${set.cta}</p></div>
+            </div>
+          </div>
+        </section>
+      `).join('')
+    </script>
+  </body>
+</html>

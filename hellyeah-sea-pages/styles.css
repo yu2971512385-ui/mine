@@ -1214,32 +1214,32 @@ code {
   font-size: 0.78rem;
 }
 
-.pilot-value {
+.platform-value {
   color: var(--white);
   background: #171914;
 }
 
-.pilot-value__layout {
+.platform-value__layout {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(460px, 1.08fr);
   gap: 88px;
   align-items: start;
 }
 
-.pilot-value__offer h2 {
+.platform-value__offer h2 {
   margin-top: 17px;
   font-size: 3.35rem;
   line-height: 1.08;
 }
 
-.pilot-value__offer > p:not(.kicker) {
+.platform-value__offer > p:not(.kicker) {
   max-width: 620px;
   margin-top: 24px;
   color: rgba(255, 255, 255, 0.64);
   font-size: 0.95rem;
 }
 
-.pilot-value__terms {
+.platform-value__scope {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 18px;
@@ -1249,24 +1249,24 @@ code {
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.pilot-value__terms > * {
+.platform-value__scope > * {
   color: rgba(255, 255, 255, 0.68);
   font-size: 0.68rem;
 }
 
-.pilot-value__terms strong {
+.platform-value__scope strong {
   color: var(--accent);
 }
 
-.pilot-value__offer .primary-button {
+.platform-value__offer .primary-button {
   margin-top: 30px;
 }
 
-.pilot-outcomes {
+.platform-outcomes {
   border-top: 1px solid rgba(255, 255, 255, 0.72);
 }
 
-.pilot-outcome {
+.platform-outcome {
   display: grid;
   grid-template-columns: 52px 1fr;
   gap: 22px;
@@ -1274,17 +1274,17 @@ code {
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.pilot-outcome > span {
+.platform-outcome > span {
   color: var(--accent);
   font-size: 0.7rem;
   font-weight: 850;
 }
 
-.pilot-outcome h3 {
+.platform-outcome h3 {
   font-size: 1.18rem;
 }
 
-.pilot-outcome p {
+.platform-outcome p {
   margin-top: 7px;
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.84rem;
@@ -1440,7 +1440,7 @@ code {
   .funnel__layout,
   .faq__layout,
   .recognition__layout,
-  .pilot-value__layout {
+  .platform-value__layout {
     grid-template-columns: 1fr;
     gap: 64px;
   }
@@ -1575,7 +1575,7 @@ code {
   .section-copy h2,
   .section-heading h2,
   .advantages__intro h2,
-  .pilot-value__offer h2,
+  .platform-value__offer h2,
   .final-cta h2 {
     font-size: 2.45rem;
   }
@@ -1739,7 +1739,7 @@ code {
   .section-heading h2,
   .advantages__intro h2,
   .ads__intro h2,
-  .pilot-value__offer h2,
+  .platform-value__offer h2,
   .final-cta h2 {
     font-size: 2.05rem;
   }
@@ -1766,7 +1766,7 @@ code {
     gap: 8px;
   }
 
-  .pilot-value__terms {
+  .platform-value__scope {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
